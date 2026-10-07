@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les notions pour utiliser un ordinateur et Windows</title>
+<style>
+:root{--bg:#f6f8fc;--fg:#1b2333;--card:#fff;--muted:#5b667a;--p:#0b6bcb;--p2:#1b3a7a;--soft:#e4effc;--line:#d9e1ee;--g:#1a8f5a;--gs:#e4effc;--bad:#dc2626;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1521;--fg:#e8edf6;--card:#182033;--muted:#9aa7bd;--p:#5aa8ff;--p2:#1c2c47;--soft:#1c2c47;--line:#2a3550;--g:#4cc58b;--gs:#1c2c47}}
+:root[data-theme="dark"]{--bg:#0f1521;--fg:#e8edf6;--card:#182033;--muted:#9aa7bd;--p:#5aa8ff;--p2:#1c2c47;--soft:#1c2c47;--line:#2a3550;--g:#4cc58b;--gs:#1c2c47}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:linear-gradient(135deg,#0b6bcb,#1b3a7a);color:#fff;padding:40px 20px;text-align:center}
+header h1{margin:0 0 8px;font-size:clamp(1.5rem,5vw,2.3rem)}
+header p{margin:0 auto;max-width:620px;opacity:.92}
+main{max-width:860px;margin:0 auto;padding:16px 16px 60px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+nav a{background:var(--soft);color:var(--p);padding:6px 12px;border-radius:20px;text-decoration:none;font-size:.88rem;font-weight:600;border:1px solid var(--line)}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:20px 0}
+h2{margin:0 0 12px;color:var(--p);font-size:1.5rem;}
+h3{margin:20px 0 6px;color:var(--p);font-size:1.12rem}
+h3 b{background:var(--p);color:#fff;border-radius:6px;padding:0 8px;margin-right:6px}
+.big{display:block;color:var(--p);font-weight:800;font-size:.85rem;letter-spacing:.06em}
+ul,ol{padding-left:22px}li{margin:6px 0}
+li>em{color:var(--muted);font-style:normal}
+.fig{margin:16px 0;text-align:center}
+.fig svg{max-width:100%;height:auto;background:var(--soft);border-radius:12px}
+.fig figcaption{color:var(--muted);font-size:.85rem;margin-top:6px}
+.sp{fill:#2a8cf0}.sw{fill:#fff}.sg{fill:#0b6bcb}.sd{fill:#1b2333}.sl{fill:#dbe4f0}.st{fill:#1b2333;font-size:12px}.stw{fill:#fff;font-size:12px;font-weight:700}
+.tip{border-left:4px solid var(--p);background:var(--gs);padding:10px 14px;border-radius:8px;margin:12px 0}
+.warn{border-left:4px solid var(--p);background:var(--soft);padding:10px 14px;border-radius:8px;margin:12px 0}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:440px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left}th{background:var(--p);color:#fff}
+kbd{background:var(--soft);border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-size:.88em}
+.q{border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0}
+.q p{margin:0 0 8px;font-weight:700}
+.q button{display:block;width:100%;text-align:left;margin:6px 0;padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:var(--soft);color:var(--fg);font:inherit;cursor:pointer}
+.q button.ok{background:var(--g);color:#fff;border-color:var(--g)}.q button.ko{background:var(--bad);color:#fff;border-color:var(--bad)}
+.q small{display:none;color:var(--muted)}.q.done small{display:block}
+#score{position:sticky;top:env(safe-area-inset-top,0px);background:var(--p);color:#fff;padding:8px 14px;border-radius:10px;font-weight:700;margin-bottom:8px;z-index:2}
+h1,h2,h3,h4,.big{text-transform:uppercase}
+h2{border-bottom:3px solid var(--p);padding-bottom:6px}
+h4{margin:16px 0 4px;color:var(--p);font-size:1rem}
+h3 b{background:var(--p);color:#fff}
+:root{--okbg:#dcf5e7;--okfg:#0f5c3a;--kobg:#fde4e4;--kofg:#8f1d1d}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--okbg:#143626;--okfg:#9ae6bd;--kobg:#401a1d;--kofg:#ffb4b4}}
+:root[data-theme="dark"]{--okbg:#143626;--okfg:#9ae6bd;--kobg:#401a1d;--kofg:#ffb4b4}
+.q button{transition:.15s}
+.q:not(.done) button:hover{border-color:var(--p);transform:translateX(3px)}
+.q button.ok{background:var(--okbg);color:var(--okfg);border:2px solid var(--g);font-weight:700}
+.q button.ko{background:var(--kobg);color:var(--kofg);border:2px solid var(--bad);font-weight:700}
+.q.done button{cursor:default}
+.q .em{float:right;font-size:1.5rem;line-height:1;animation:pop .4s}
+@keyframes pop{0%{transform:scale(.2)}70%{transform:scale(1.35)}100%{transform:scale(1)}}
+#score{background:linear-gradient(90deg,#0b6bcb,#1b3a7a)}
+tr:nth-child(even) td{background:var(--soft)}
+:root{--pabg:#fff3d6;--pafg:#7a5200}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--pabg:#3d2f10;--pafg:#ffd98a}}
+:root[data-theme="dark"]{--pabg:#3d2f10;--pafg:#ffd98a}
+#result{display:none;text-align:center;border-radius:14px;padding:22px 16px;margin-top:16px;border:2px solid var(--p);background:var(--soft)}
+#result.show{display:block;animation:pop .5s}
+#result .big2{font-size:3.5rem;line-height:1.1}
+#result h4{margin:6px 0 2px;font-size:1.5rem}
+#result p{margin:4px 0 0;color:var(--muted)}
+#result.r0{background:var(--kobg);border-color:var(--bad)}#result.r0 h4{color:var(--kofg)}
+#result.r1{background:var(--pabg);border-color:#e0a21b}#result.r1 h4{color:var(--pafg)}
+#result.r3,#result.r4{background:var(--okbg);border-color:var(--g)}#result.r3 h4,#result.r4 h4{color:var(--okfg)}
+footer{text-align:center;color:var(--muted);padding:20px;font-size:.85rem}
+</style></head><body>
+<header><h1>🖥️ Les notions pour utiliser un ordinateur et Windows</h1><p>Un cours pas à pas pour partir de zéro et devenir autonome.</p></header>
+<main>
+<nav><a href="#i">I. Introduction</a><a href="#ii">II. Développement</a><a href="#iii">III. Conclusion</a><a href="#iv">IV. Évaluation</a></nav>
+
+<section id="i"><span class="big">PARTIE I</span><h2>I. Introduction</h2>
+<h3><b>A</b>Contexte</h3>
+<p>L'ordinateur est devenu un outil de base dans presque tous les domaines : études, travail, commerce, santé, administration, communication et loisirs. Inscriptions en ligne, recherche d'emploi, paiements, cours à distance : tout passe aujourd'hui par un écran.</p>
+<p>Savoir s'en servir n'est donc plus un luxe mais une <strong>compétence de base</strong>, au même titre que lire et écrire. Une personne à l'aise avec son ordinateur travaille plus vite, fait moins d'erreurs et s'adapte plus facilement aux nouveaux outils numériques.</p>
+<figure class="fig"><svg viewBox="0 0 400 190" role="img" aria-label="Ordinateur portable">
+<rect x="90" y="15" width="220" height="130" rx="10" class="sd"/><rect x="100" y="25" width="200" height="110" rx="4" class="sp"/>
+<rect x="100" y="115" width="200" height="20" class="sd"/><rect x="108" y="120" width="12" height="10" rx="2" class="sg"/>
+<circle cx="200" cy="70" r="18" class="sw" opacity=".9"/><path d="M60 150h280l20 22H40z" class="sl"/><rect x="170" y="155" width="60" height="6" rx="3" class="sp"/></svg>
+<figcaption>Votre point de départ : un PC sous Windows.</figcaption></figure>
+
+<h3><b>B</b>Qu'est-ce qu'un ordinateur ?</h3>
+<p>Un ordinateur est une <strong>machine électronique programmable</strong> qui reçoit des informations, les traite, les conserve et les restitue. Son fonctionnement suit toujours le même cycle :</p>
+<ul>
+<li><strong>Entrée</strong> : <em>vous donnez des informations à la machine avec le clavier, la souris, un micro ou une clé USB.</em></li>
+<li><strong>Traitement</strong> : <em>le processeur effectue les calculs et exécute les instructions.</em></li>
+<li><strong>Stockage</strong> : <em>les données sont conservées sur le disque dur ou le SSD pour être retrouvées plus tard.</em></li>
+<li><strong>Sortie</strong> : <em>le résultat s'affiche sur l'écran, s'imprime ou passe par les haut-parleurs.</em></li>
+</ul>
+
+<h3><b>C</b>Qu'est-ce que Windows ?</h3>
+<p><strong>Windows</strong> est le système d'exploitation créé par Microsoft. C'est le programme principal qui démarre avec l'ordinateur et qui permet de s'en servir sans connaître le langage de la machine.</p>
+<ul>
+<li><strong>Interface graphique</strong> : <em>vous utilisez des fenêtres, des icônes et des menus plutôt que des lignes de commandes compliquées.</em></li>
+<li><strong>Gestion des ressources</strong> : <em>Windows répartit la mémoire, le processeur et le stockage entre les programmes ouverts.</em></li>
+<li><strong>Compatibilité</strong> : <em>la plupart des logiciels et périphériques du marché fonctionnent avec Windows.</em></li>
+<li><strong>Versions</strong> : <em>Windows 10 et Windows 11 sont les plus répandues ; leur fonctionnement de base est très proche, donc ce cours s'applique aux deux.</em></li>
+</ul>
+
+<h3><b>D</b>Pourquoi apprendre à l'utiliser ?</h3>
+<ul>
+<li><strong>Gagner du temps</strong> : <em>connaître les bons gestes et les raccourcis accélère toutes les tâches.</em></li>
+<li><strong>Être autonome</strong> : <em>on règle soi-même les petits problèmes sans dépendre d'un tiers.</em></li>
+<li><strong>Protéger ses données</strong> : <em>de bonnes habitudes évitent la perte de fichiers et les arnaques en ligne.</em></li>
+<li><strong>Préparer la suite</strong> : <em>Word, Excel, la programmation ou le marketing digital demandent de maîtriser ces bases.</em></li>
+<li><strong>Améliorer ses chances professionnelles</strong> : <em>presque tous les métiers demandent aujourd'hui un minimum de culture informatique.</em></li>
+</ul>
+
+<h3><b>E</b>Objectifs</h3>
+<p>À la fin de ce cours, vous serez capable de :</p>
+<ul>
+<li><strong>Connaître les composants</strong> : <em>nommer et décrire le rôle de chaque pièce de la machine.</em></li>
+<li><strong>Allumer et éteindre correctement</strong> : <em>éviter la perte de données et les pannes.</em></li>
+<li><strong>Se repérer dans Windows</strong> : <em>utiliser bureau, menu Démarrer et fenêtres sans hésiter.</em></li>
+<li><strong>Gérer ses fichiers</strong> : <em>créer, ranger et retrouver ses documents rapidement.</em></li>
+<li><strong>Naviguer en sécurité</strong> : <em>se connecter à Internet en protégeant ses informations.</em></li>
+</ul>
+
+<h3><b>F</b>Public et prérequis</h3>
+<ul>
+<li><strong>Public</strong> : <em>étudiants, débutants, adultes en reconversion et toute personne qui veut apprendre les bases.</em></li>
+<li><strong>Prérequis</strong> : <em>aucun, il suffit de savoir lire et d'avoir un ordinateur Windows à portée de main.</em></li>
+<li><strong>Durée conseillée</strong> : <em>environ 3 heures, réparties en plusieurs séances pour mieux retenir.</em></li>
+</ul>
+
+<h3><b>G</b>Comment suivre ce cours</h3>
+<ol>
+<li><strong>Lire la notion</strong> : <em>comprenez d'abord l'idée générale avant de passer aux détails.</em></li>
+<li><strong>Pratiquer sur l'ordinateur</strong> : <em>refaites chaque manipulation vous-même, on retient surtout en faisant.</em></li>
+<li><strong>Faire les exercices</strong> : <em>ils servent à vérifier que vous maîtrisez les gestes.</em></li>
+<li><strong>Passer le quiz</strong> : <em>la note finale indique votre niveau et ce qu'il faut revoir.</em></li>
+</ol>
+
+<h3><b>H</b>Plan du cours</h3>
+<p>Le développement comporte 7 notions, suivies d'une conclusion, puis d'une partie d'évaluation avec exercices pratiques et un quiz de 10 questions :</p>
+<ol>
+<li><strong><a href="#n1">Comprendre l'ordinateur</a></strong> : <em>matériel et logiciels.</em></li>
+<li><strong><a href="#n2">Allumer et éteindre</a></strong> : <em>démarrer et arrêter proprement.</em></li>
+<li><strong><a href="#n3">Le bureau Windows</a></strong> : <em>se repérer à l'écran.</em></li>
+<li><strong><a href="#n4">Fichiers et dossiers</a></strong> : <em>ranger et organiser ses documents.</em></li>
+<li><strong><a href="#n5">Les paramètres</a></strong> : <em>adapter Windows à ses besoins.</em></li>
+<li><strong><a href="#n6">Internet et sécurité</a></strong> : <em>se connecter et se protéger.</em></li>
+<li><strong><a href="#n7">Les raccourcis clavier</a></strong> : <em>travailler plus vite.</em></li>
+</ol></section>
+
+<section id="ii"><span class="big">PARTIE II</span><h2>II. Développement</h2>
+
+<h3 id="n1"><b>1</b>Comprendre l'ordinateur</h3>
+<figure class="fig"><svg viewBox="0 0 420 150" role="img" aria-label="Composants">
+<rect x="10" y="20" width="80" height="110" rx="8" class="sd"/><circle cx="50" cy="45" r="7" class="sg"/><rect x="24" y="70" width="52" height="6" class="sl"/><rect x="24" y="84" width="52" height="6" class="sl"/>
+<rect x="130" y="15" width="130" height="85" rx="6" class="sd"/><rect x="137" y="22" width="116" height="71" class="sp"/><rect x="185" y="100" width="20" height="12" class="sd"/><rect x="165" y="112" width="60" height="6" rx="3" class="sd"/>
+<rect x="290" y="45" width="115" height="34" rx="5" class="sl"/><rect x="298" y="52" width="100" height="6" class="sp"/><rect x="298" y="64" width="100" height="6" class="sp"/>
+<ellipse cx="350" cy="115" rx="14" ry="20" class="sg"/>
+<text x="50" y="145" class="st" text-anchor="middle">Unité</text><text x="195" y="140" class="st" text-anchor="middle">Écran</text><text x="347" y="38" class="st" text-anchor="middle">Clavier</text><text x="395" y="125" class="st" text-anchor="end">Souris</text></svg>
+<figcaption>Les éléments principaux d'un ordinateur de bureau.</figcaption></figure>
+<h4>A. Le matériel (hardware)</h4>
+<ul>
+<li><strong>Unité centrale</strong> : <em>le « cerveau » qui contient le processeur, la RAM et le stockage et effectue tous les calculs.</em></li>
+<li><strong>Écran</strong> : <em>affiche les informations et vos actions.</em></li>
+<li><strong>Clavier et souris</strong> : <em>vos outils pour saisir du texte et donner des ordres.</em></li>
+<li><strong>Périphériques</strong> : <em>appareils ajoutés (imprimante, clé USB, casque, webcam) qui étendent les possibilités.</em></li>
+</ul>
+<h4>B. Les logiciels (software)</h4>
+<ul>
+<li><strong>Système d'exploitation (Windows)</strong> : <em>le programme principal qui fait le lien entre vous et la machine.</em></li>
+<li><strong>Applications</strong> : <em>programmes pour une tâche précise (Word pour écrire, Excel pour calculer, un navigateur pour Internet).</em></li>
+</ul>
+<div class="tip">💡 <strong>RAM</strong> = mémoire de travail, effacée à l'extinction. <strong>Disque dur/SSD</strong> = stockage permanent de vos fichiers.</div>
+
+<h3 id="n2"><b>2</b>Allumer et éteindre</h3>
+<h4>A. Allumer</h4>
+<ol>
+<li><strong>Brancher</strong> : <em>vérifiez l'alimentation ou la batterie.</em></li>
+<li><strong>Appuyer sur le bouton d'alimentation</strong> : <em>le système démarre.</em></li>
+<li><strong>Attendre l'écran de connexion</strong> : <em>Windows charge, patientez sans rappuyer.</em></li>
+<li><strong>Se connecter</strong> : <em>entrez mot de passe ou PIN pour ouvrir votre session.</em></li>
+</ol>
+<h4>B. Éteindre proprement</h4>
+<ol>
+<li><strong>Enregistrer et fermer</strong> : <em>sauvegardez votre travail et quittez les applications.</em></li>
+<li><strong>Démarrer → Alimentation → Arrêter</strong> : <em>Windows ferme tout correctement avant de s'éteindre.</em></li>
+</ol>
+<div class="tw"><table><tr><th>Option</th><th>Effet</th></tr>
+<tr><td>Arrêter</td><td>Éteint complètement</td></tr><tr><td>Redémarrer</td><td>Éteint puis rallume, utile en cas de blocage</td></tr><tr><td>Mettre en veille</td><td>Pause rapide, la session reste ouverte</td></tr></table></div>
+<div class="warn">⚠️ Couper le courant brutalement peut faire perdre des données ou abîmer le système.</div>
+
+<h3 id="n3"><b>3</b>Découvrir le bureau Windows</h3>
+<figure class="fig"><svg viewBox="0 0 420 220" role="img" aria-label="Bureau Windows">
+<rect width="420" height="220" rx="8" class="sp"/><rect x="140" y="25" width="190" height="120" rx="6" class="sw"/><rect x="140" y="25" width="190" height="18" rx="6" class="sl"/>
+<text x="318" y="39" class="st">— ☐ ✕</text><text x="150" y="38" class="st">Bloc-notes</text>
+<rect x="12" y="15" width="26" height="22" rx="3" class="sg"/><text x="8" y="52" class="stw">Dossier</text><rect x="12" y="75" width="26" height="22" rx="3" class="sl"/><text x="6" y="112" class="stw">Corbeille</text>
+<rect y="196" width="420" height="24" class="sd"/><rect x="8" y="201" width="14" height="14" rx="2" class="sg"/><rect x="36" y="201" width="60" height="14" rx="3" class="sp"/><text x="340" y="213" class="stw">12:30</text>
+<text x="150" y="170" class="stw">① Icônes à gauche</text><text x="150" y="186" class="stw">② Barre des tâches en bas</text></svg>
+<figcaption>Icônes, fenêtre ouverte et barre des tâches avec le bouton Démarrer.</figcaption></figure>
+<h4>A. Les éléments du bureau</h4>
+<ul>
+<li><strong>Icônes</strong> : <em>raccourcis pour ouvrir un programme ou un dossier d'un double-clic.</em></li>
+<li><strong>Barre des tâches</strong> : <em>affiche les applications ouvertes ou épinglées et permet de passer de l'une à l'autre.</em></li>
+<li><strong>Bouton Démarrer</strong> : <em>porte d'accès aux applications, aux paramètres et à l'arrêt.</em></li>
+<li><strong>Zone de notification</strong> : <em>heure, Wi-Fi, volume et batterie.</em></li>
+</ul>
+<h4>B. Pratique</h4>
+<ol>
+<li><strong>Ouvrir Démarrer et chercher « Bloc-notes »</strong> : <em>la recherche est le moyen le plus rapide de trouver une application.</em></li>
+<li><strong>Repérer Réduire / Agrandir / Fermer</strong> : <em>ces trois boutons contrôlent la taille de la fenêtre.</em></li>
+<li><strong>Alterner avec <kbd>Alt</kbd>+<kbd>Tab</kbd></strong> : <em>passer d'une fenêtre à l'autre sans la souris.</em></li>
+</ol>
+
+<h3 id="n4"><b>4</b>Gérer fichiers et dossiers</h3>
+<figure class="fig"><svg viewBox="0 0 420 170" role="img" aria-label="Arborescence">
+<g stroke="#6b778d" stroke-width="2" fill="none"><path d="M40 36v32h40M110 90v28h40M110 118v28h40"/></g>
+<rect x="20" y="8" width="130" height="28" rx="6" class="sg"/><text x="30" y="27" class="stw">Documents</text>
+<rect x="80" y="55" width="130" height="28" rx="6" class="sp"/><text x="90" y="74" class="stw">UVCI</text>
+<rect x="150" y="103" width="130" height="28" rx="6" class="sd"/><text x="160" y="122" class="stw">Marketing</text>
+<rect x="150" y="137" width="130" height="28" rx="6" class="sd"/><text x="160" y="156" class="stw">Bureautique</text>
+<rect x="300" y="103" width="105" height="28" rx="6" class="sl"/><text x="310" y="122" class="st">notes.txt</text></svg>
+<figcaption>Arborescence : des dossiers qui contiennent des dossiers et des fichiers.</figcaption></figure>
+<h4>A. Vocabulaire</h4>
+<ul>
+<li><strong>Fichier</strong> : <em>un document (texte, photo, vidéo).</em></li>
+<li><strong>Dossier</strong> : <em>un « tiroir » qui regroupe des fichiers.</em></li>
+<li><strong>Explorateur de fichiers</strong> : <em>l'outil pour naviguer, ouvert avec <kbd>Windows</kbd>+<kbd>E</kbd>.</em></li>
+</ul>
+<h4>B. Les actions de base</h4>
+<ol>
+<li><strong>Créer</strong> : <em>clic droit → Nouveau → Dossier.</em></li>
+<li><strong>Renommer</strong> (<kbd>F2</kbd>) : <em>change le nom sans toucher au contenu.</em></li>
+<li><strong>Copier</strong> (<kbd>Ctrl</kbd>+<kbd>C</kbd> puis <kbd>Ctrl</kbd>+<kbd>V</kbd>) : <em>crée un double ailleurs, l'original reste.</em></li>
+<li><strong>Déplacer</strong> (<kbd>Ctrl</kbd>+<kbd>X</kbd> puis <kbd>Ctrl</kbd>+<kbd>V</kbd>) : <em>change l'emplacement du fichier.</em></li>
+<li><strong>Supprimer</strong> (<kbd>Suppr</kbd>) : <em>envoie le fichier à la Corbeille, d'où on peut le restaurer.</em></li>
+</ol>
+<h4>C. Bonnes pratiques</h4>
+<ul>
+<li><strong>Noms clairs</strong> : <em>par exemple Cours_Marketing_Chap1, pour se retrouver facilement.</em></li>
+<li><strong>Un dossier par matière</strong> : <em>garde l'ensemble organisé.</em></li>
+<li><strong>Sauvegardes</strong> : <em>copie sur clé USB ou cloud pour ne rien perdre en cas de panne.</em></li>
+</ul>
+
+<h3 id="n5"><b>5</b>Les paramètres essentiels</h3>
+<p>Ouvrez <strong>Démarrer → Paramètres</strong> ou <kbd>Windows</kbd>+<kbd>I</kbd>.</p>
+<ul>
+<li><strong>Système</strong> : <em>réglages d'affichage, de son et de batterie.</em></li>
+<li><strong>Réseau et Internet</strong> : <em>connexion Wi-Fi.</em></li>
+<li><strong>Personnalisation</strong> : <em>fond d'écran et thème pour adapter l'aspect.</em></li>
+<li><strong>Comptes</strong> : <em>mot de passe et code PIN de votre session.</em></li>
+<li><strong>Heure et langue</strong> : <em>fuseau horaire et clavier (AZERTY).</em></li>
+<li><strong>Windows Update</strong> : <em>installe les mises à jour qui corrigent les failles de sécurité.</em></li>
+</ul>
+
+<h3 id="n6"><b>6</b>Internet et sécurité</h3>
+<h4>A. Se connecter au Wi-Fi</h4>
+<ol>
+<li><strong>Cliquer sur l'icône réseau</strong> : <em>en bas à droite, dans la zone de notification.</em></li>
+<li><strong>Choisir le réseau</strong> : <em>sélectionnez le vôtre dans la liste.</em></li>
+<li><strong>Saisir le mot de passe</strong> : <em>puis « Se connecter ».</em></li>
+</ol>
+<h4>B. Naviguer</h4>
+<ul>
+<li><strong>Navigateur</strong> : <em>Chrome, Edge ou Firefox, le logiciel pour visiter les sites.</em></li>
+<li><strong>Barre d'adresse</strong> : <em>tapez une adresse ou une recherche.</em></li>
+<li><strong>Favoris (<kbd>Ctrl</kbd>+<kbd>D</kbd>)</strong> : <em>retrouver un site en un clic.</em></li>
+</ul>
+<h4>C. Règles de sécurité</h4>
+<ul>
+<li><strong>Mot de passe long et unique</strong> : <em>si un compte est piraté, les autres restent protégés.</em></li>
+<li><strong>Méfiance envers liens et pièces jointes</strong> : <em>ils peuvent cacher des virus ou des arnaques.</em></li>
+<li><strong>Windows Defender actif</strong> : <em>antivirus intégré qui bloque les menaces.</em></li>
+<li><strong>Se déconnecter</strong> : <em>sur un PC partagé, pour que personne n'accède à vos comptes.</em></li>
+</ul>
+
+<h3 id="n7"><b>7</b>Raccourcis clavier utiles</h3>
+<div class="tw"><table><tr><th>Raccourci</th><th>Action et intérêt</th></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>C</kbd> / <kbd>V</kbd> / <kbd>X</kbd></td><td>Copier / Coller / Couper, base du rangement</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Z</kbd></td><td>Annuler une erreur</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>S</kbd></td><td>Enregistrer son travail</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>A</kbd></td><td>Tout sélectionner</td></tr>
+<tr><td><kbd>Alt</kbd>+<kbd>Tab</kbd></td><td>Changer de fenêtre</td></tr>
+<tr><td><kbd>Windows</kbd>+<kbd>D</kbd></td><td>Afficher le bureau</td></tr>
+<tr><td><kbd>Windows</kbd>+<kbd>L</kbd></td><td>Verrouiller la session en s'absentant</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Suppr</kbd></td><td>Gestionnaire des tâches si le PC se bloque</td></tr></table></div>
+</section>
+
+<section id="iii"><span class="big">PARTIE III</span><h2>III. Conclusion</h2>
+<h3><b>A</b>Ce qu'il faut retenir</h3>
+<div class="tw"><table><tr><th>Notion</th><th>Compétence clé</th></tr>
+<tr><td>1</td><td>Distinguer matériel et logiciel</td></tr><tr><td>2</td><td>Allumer et éteindre proprement</td></tr><tr><td>3</td><td>Se repérer dans le bureau</td></tr><tr><td>4</td><td>Créer, copier, déplacer, supprimer</td></tr><tr><td>5</td><td>Régler les paramètres</td></tr><tr><td>6</td><td>Naviguer en sécurité</td></tr><tr><td>7</td><td>Gagner du temps avec les raccourcis</td></tr></table></div>
+<h3><b>B</b>Pour la suite</h3>
+<p>Ces bases sont le socle de tout le reste : bureautique (Word, Excel), programmation, marketing digital.</p>
+<div class="tip">🚀 Pratiquez 15 minutes par jour, c'est la régularité qui rend les gestes automatiques.</div></section>
+<section id="iv"><span class="big">PARTIE IV</span><h2>IV. Évaluation</h2>
+<h3><b>A</b>Exercices pratiques</h3>
+<ol>
+<li>Connectez-vous, puis verrouillez votre session avec <kbd>Windows</kbd>+<kbd>L</kbd>.</li>
+<li>Créez <code>Documents/UVCI/Marketing</code> et <code>Documents/UVCI/Bureautique</code>.</li>
+<li>Écrivez 3 lignes dans le Bloc-notes et enregistrez-les dans <em>Marketing</em>.</li>
+<li>Copiez ce fichier dans <em>Bureautique</em>, puis renommez la copie.</li>
+<li>Changez votre fond d'écran.</li>
+<li>Connectez-vous au Wi-Fi et ajoutez un site en favori.</li>
+</ol>
+<h3><b>B</b>Quiz à choix multiples (10 questions)</h3>
+<div id="score">Score : 0 / 10</div><div id="quiz"></div><div id="result"></div></section>
+
+</main><footer>Les notions pour utiliser un ordinateur et Windows</footer>
+<script>
+var Q=[
+["Quelle est la différence entre la RAM et le disque dur ?",["La RAM est temporaire, le disque dur est permanent","La RAM est permanente, le disque dur est temporaire","Aucune différence","La RAM sert uniquement à imprimer"],0,"La RAM est la mémoire de travail ; le disque dur conserve vos fichiers."],
+["Quel logiciel fait le lien entre vous et la machine ?",["Un navigateur","Le système d'exploitation","Un antivirus","Word"],1,"Windows est le système d'exploitation."],
+["Quel raccourci annule la dernière action ?",["Ctrl+C","Ctrl+S","Ctrl+Z","Ctrl+A"],2,"Ctrl+Z annule."],
+["Où vont les fichiers supprimés avec la touche Suppr ?",["Ils disparaissent définitivement","Dans la Corbeille","Dans Documents","Sur la clé USB"],1,"Ils restent restaurables depuis la Corbeille."],
+["Pourquoi éteindre via le menu Démarrer ?",["Pour aller plus vite","Pour économiser le Wi-Fi","Pour éviter la perte de données et les erreurs","Ce n'est pas nécessaire"],2,"Windows ferme proprement les programmes."],
+["Que fait « Mettre en veille » ?",["Éteint complètement le PC","Met en pause, la session reste ouverte","Supprime les fichiers","Redémarre le PC"],1,"Le PC redémarre vite là où vous l'avez laissé."],
+["Quel raccourci ouvre l'Explorateur de fichiers ?",["Windows+E","Windows+L","Alt+Tab","Ctrl+D"],0,"Windows+E ouvre l'Explorateur."],
+["Quel raccourci verrouille la session ?",["Windows+D","Windows+L","Ctrl+Z","F2"],1,"Windows+L verrouille quand vous vous absentez."],
+["Quelle touche permet de renommer un fichier sélectionné ?",["F1","F2","F5","Échap"],1,"F2 passe le nom en mode édition."],
+["Quel mot de passe est le plus sûr ?",["123456","Mon prénom","Le même partout","Long, unique et mélangé"],3,"Long et unique limite les dégâts en cas de piratage."]];
+function res(){var r=s<5?["Mal","😢","r0","Relis le cours et réessaie, tu peux y arriver."]:s==5?["Passable","😐","r1","Tu as la moyenne, encore un petit effort."]:s<9?["Assez bien","🙂","r2","Bon travail, quelques points à revoir."]:s==9?["Bien","😊","r3","Presque parfait, bravo !"]:["Très bien","🤩","r4","Parfait, félicitations !"];
+var e=document.getElementById("result");e.className="show "+r[2];
+e.innerHTML='<div class="big2">'+r[1]+'</div><h4>'+r[0].toUpperCase()+'</h4><strong>'+s+' / '+Q.length+'</strong><p>'+r[3]+'</p>';
+e.scrollIntoView({behavior:"smooth",block:"center"});}
+var s=0,n=0,box=document.getElementById("quiz");
+Q.forEach(function(q,i){var d=document.createElement("div");d.className="q";var p=document.createElement("p");p.textContent=(i+1)+". "+q[0];d.appendChild(p);
+q[1].forEach(function(o,j){var b=document.createElement("button");b.textContent=String.fromCharCode(65+j)+". "+o;
+b.onclick=function(){if(d.className.indexOf("done")>-1)return;d.className+=" done";
+var bs=d.querySelectorAll("button"),good=(j==q[2]);bs[q[2]].className="ok";if(good){s++}else{b.className="ko"}
+b.insertAdjacentHTML("beforeend",'<span class="em">'+(good?"😄":"😢")+'</span>');
+d.querySelector("small").textContent=(good?"😄 Bravo ! ":"😢 Raté. Bonne réponse : "+q[1][q[2]]+". ")+q[3];
+document.getElementById("score").textContent="Score : "+s+" / 10";n++;if(n==Q.length)res();};d.appendChild(b);});
+var m=document.createElement("small");m.textContent="💡 "+q[3];d.appendChild(m);box.appendChild(d);});
+</script></body></html>
