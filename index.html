@@ -1,372 +1,1547 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Les notions pour utiliser un ordinateur et Windows</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<html lang="fr" data-theme="plum">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Planificateur hebdomadaire personnel, de 8h à minuit.">
+    <title>Mon Planning</title>
 
-<style>
-:root{--bg:#f7f4f8;--card:#fff;--fg:#14192b;--muted:#5d6579;--line:#e6dfe7;--okbg:#dcf5e7;--okfg:#0f5c3a;--kobg:#fde4e4;--kofg:#8f1d1d;--pabg:#fff1de;--pafg:#7a3b06;
---hd:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--bd:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-*{box-sizing:border-box}
-html{scroll-padding-top:24px}
-@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 var(--bd);-webkit-font-smoothing:antialiased}
-:focus-visible{outline:3px solid #0E7490;outline-offset:2px;border-radius:4px}
-header{position:relative;overflow:hidden;color:#fff;padding:80px 24px 96px;background:radial-gradient(circle at 88% 15%,#a0309a 0,transparent 42%),linear-gradient(135deg,#3e1139,#7B2574)}
-header::before{content:"";position:absolute;inset:0;opacity:.7;background-image:radial-gradient(rgba(255,255,255,.16) 1.2px,transparent 1.5px);background-size:22px 22px}
-header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:linear-gradient(90deg,#16883F 0 20%,#8E2480 20% 40%,#B8560B 40% 60%,#0E7490 60% 80%,#16883F 80%)}
-.hw{position:relative;max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.3fr .7fr;gap:56px;align-items:center}
-header h1{font:800 clamp(2.1rem,5.2vw,3.6rem)/1.06 var(--hd);letter-spacing:-.025em;margin:0 0 18px}
-header p{font-size:1.25rem;max-width:34ch;margin:0 0 26px;opacity:.92}
-.meta{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 32px;padding:0;list-style:none}
-.meta li{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 16px;font:600 .9rem var(--hd);background:rgba(255,255,255,.08)}
-.cta{display:flex;flex-wrap:wrap;gap:12px}
-.cta a{font:700 1rem var(--hd);text-decoration:none;padding:14px 26px;border-radius:12px}
-.b1{background:#fff;color:#4a1346}.b2{border:2px solid rgba(255,255,255,.55);color:#fff}
-.win{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:20px 22px 26px;min-height:240px;box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
-.win span{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:7px;background:rgba(255,255,255,.55)}
-.win span:nth-of-type(2){background:#B8560B}.win span:nth-of-type(3){background:#16883F}
-.win em{display:block;height:13px;border-radius:7px;margin-top:18px;background:rgba(255,255,255,.24)}
-.win em:nth-of-type(1){width:68%;margin-top:30px}.win em:nth-of-type(2){width:92%;background:#16883F}.win em:nth-of-type(3){width:54%}.win em:nth-of-type(4){width:80%;background:#B8560B}
-main{max-width:1120px;margin:0 auto;padding:44px 24px 80px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:0 48px;align-items:start}
-nav{grid-column:1;grid-row:1/span 4;position:sticky;top:calc(24px + env(safe-area-inset-top,0px));align-self:start;display:flex;flex-direction:column;gap:2px;max-height:calc(100vh - 48px);overflow:auto;font:600 .95rem var(--hd)}
-nav a{display:flex;gap:10px;padding:10px 14px;border-radius:10px;text-decoration:none;color:var(--muted);border-left:3px solid transparent}
-nav a:hover{color:var(--fg);background:var(--card)}
-nav a[aria-current]{color:var(--fg);background:var(--card);border-left-color:#7B2574}
-.sub{display:flex;flex-direction:column;margin:2px 0 10px 16px;border-left:1px solid var(--line)}
-.sub a{font-weight:500;font-size:.88rem;padding:6px 10px;border-left:none}
-.sub span{color:#7B2574;font-weight:800;min-width:1ch}
-section{--a:#7B2574;--at:color-mix(in srgb,var(--a) 72%,var(--fg));--as:color-mix(in srgb,var(--a) 11%,var(--card));grid-column:2;background:var(--card);border-top:5px solid var(--a);border-radius:20px;padding:44px 52px;margin:0 0 28px;box-shadow:0 14px 40px -26px rgba(62,17,57,.35)}
-#ii{--a:#16883F}#iii{--a:#B8560B}#iv{--a:#0E7490}
-.big{display:inline-block;margin-bottom:14px;padding:4px 14px;border-radius:999px;background:var(--as);color:var(--at);font:700 .82rem var(--hd)}
-h2{margin:0 0 22px;font:800 clamp(1.7rem,3.4vw,2.35rem)/1.15 var(--hd);letter-spacing:-.02em}
-h3{display:flex;align-items:center;gap:12px;margin:42px 0 12px;font:800 1.25rem/1.3 var(--hd);letter-spacing:-.01em}
-h3 b{flex:none;width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:var(--a);color:#fff;font-size:.95rem}
-h4{margin:26px 0 6px;font:800 1rem var(--hd);color:var(--at)}
-p{margin:0 0 14px}
-section ul,section ol{list-style:none;padding:0;margin:10px 0 16px}
-section ol{counter-reset:n}
-section li{position:relative;margin:6px 0;padding-left:28px}
-section ul>li::before{content:"";position:absolute;left:4px;top:.7em;width:8px;height:8px;border-radius:2px;background:var(--a)}
-section ol>li{counter-increment:n;padding-left:44px}
-section ol>li::before{content:counter(n);position:absolute;left:0;top:.12em;width:28px;height:28px;border-radius:50%;background:var(--as);color:var(--at);font:800 .82rem/28px var(--hd);text-align:center}
-li>em{color:var(--muted);font-style:normal}
-li a{color:var(--at);font-weight:700;text-underline-offset:3px;text-decoration-thickness:2px}
-code{font-family:ui-monospace,Consolas,monospace;background:var(--as);color:var(--at);padding:2px 7px;border-radius:6px;font-size:.88em}
-kbd{font:600 .8em ui-monospace,Consolas,monospace;background:var(--card);border:1px solid var(--line);border-bottom-width:3px;border-radius:6px;padding:1px 7px}
-.fig{margin:22px 0;text-align:center}
-.fig svg{max-width:100%;height:auto;background:#f6eef5;border-radius:16px}
-.fig figcaption{color:var(--muted);font-size:.88rem;margin-top:8px}
-.sp{fill:#8E2480}.sw{fill:#fff}.sg{fill:#16883F}.sd{fill:#14192b}.sl{fill:#e9d9e7}.st{fill:#14192b;font-size:12px}.stw{fill:#fff;font-size:12px;font-weight:700}
-.tip,.warn{--k:#16883F;margin:22px 0;padding:16px 20px;border-radius:12px;border-left:4px solid var(--k);background:color-mix(in srgb,var(--k) 9%,var(--card))}
-.warn{--k:#B8560B}
-.tip::before,.warn::before{display:block;margin-bottom:2px;font:800 .85rem var(--hd);color:color-mix(in srgb,var(--k) 75%,var(--fg))}
-.tip::before{content:"Astuce"}.warn::before{content:"Attention"}
-.tw{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:14px}
-table{border-collapse:collapse;width:100%;min-width:440px}
-th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
-th{background:#3e1139;color:#fff;font:700 .86rem var(--hd)}
-tr:last-child td{border-bottom:none}
-tr:nth-child(even) td{background:var(--as)}
-.q{margin:14px 0;padding:18px 20px;border:1px solid var(--line);border-radius:14px}
-.q p{margin:0 0 10px;font:700 1.02rem/1.45 var(--hd)}
-.q button{display:block;width:100%;text-align:left;margin:8px 0;padding:11px 14px;border-radius:10px;border:1.5px solid var(--line);background:transparent;color:var(--fg);font:inherit;cursor:pointer;transition:.15s}
-.q:not(.done) button:hover{border-color:var(--a);background:var(--as)}
-.q button.ok{background:var(--okbg);color:var(--okfg);border:2px solid #16883F;font-weight:700}
-.q button.ko{background:var(--kobg);color:var(--kofg);border:2px solid #dc2626;font-weight:700}
-.q.done button{cursor:default}
-.q .em{float:right;font-size:1.4rem;line-height:1;animation:pop .4s}
-.q small{display:none;color:var(--muted)}.q.done small{display:block}
-@keyframes pop{0%{transform:scale(.2)}70%{transform:scale(1.35)}100%{transform:scale(1)}}
-#score{position:sticky;top:calc(10px + env(safe-area-inset-top,0px));z-index:3;display:inline-block;margin-bottom:10px;padding:10px 20px;border-radius:999px;background:var(--a);color:#fff;font:800 .95rem var(--hd);box-shadow:0 8px 20px -10px rgba(0,0,0,.4)}
-#result{display:none;text-align:center;border-radius:18px;padding:28px 16px;margin-top:18px;border:2px solid var(--a);background:var(--as)}
-#result.show{display:block;animation:pop .5s}
-#result .big2{font-size:3.5rem;line-height:1.1}
-#result h4{margin:6px 0 2px;font-size:1.5rem;color:var(--fg)}
-#result p{margin:4px 0 0;color:var(--muted)}
-#result.r0{background:var(--kobg);border-color:#dc2626}#result.r0 h4{color:var(--kofg)}
-#result.r1{background:var(--pabg);border-color:#B8560B}#result.r1 h4{color:var(--pafg)}
-#result.r3,#result.r4{background:var(--okbg);border-color:#16883F}#result.r3 h4,#result.r4 h4{color:var(--okfg)}
-footer{text-align:center;color:var(--muted);padding:28px 20px 40px;font-size:.9rem;border-top:1px solid var(--line)}
-@media (max-width:1000px){
-html{scroll-padding-top:72px}
-header{padding:52px 20px 68px}.hw{grid-template-columns:1fr}.win{display:none}
-main{display:block;padding:0 14px 60px}
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;flex-direction:row;gap:6px;overflow-x:auto;white-space:nowrap;max-height:none;margin:0 -14px 20px;padding:10px 14px;background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav .sub{display:none}nav a{border-left:none}
-section{padding:30px 20px;border-radius:16px}
-}
-</style></head><body>
-<header><div class="hw"><div><h1>Les notions pour utiliser un ordinateur et Windows</h1><p>Un cours pas à pas pour partir de zéro et devenir autonome.</p><ul class="meta"><li>7 notions</li><li>Environ 3 heures</li><li>Quiz de 10 questions</li></ul><div class="cta"><a class="b1" href="#i">Commencer le cours</a><a class="b2" href="#iv">Passer au quiz</a></div></div><div class="win" aria-hidden="true"><span></span><span></span><span></span><em></em><em></em><em></em><em></em></div></div></header>
-<main>
-<nav><a href="#i">I. Introduction</a><a href="#ii">II. Développement</a><a href="#iii">III. Conclusion</a><a href="#iv">IV. Évaluation</a></nav>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet">
 
-<section id="i"><span class="big">Partie I</span><h2>I. Introduction</h2>
-<h3><b>A</b>Contexte</h3>
-<p>L'ordinateur est devenu un outil de base dans presque tous les domaines : études, travail, commerce, santé, administration, communication et loisirs. Inscriptions en ligne, recherche d'emploi, paiements, cours à distance : tout passe aujourd'hui par un écran.</p>
-<p>Savoir s'en servir n'est donc plus un luxe mais une <strong>compétence de base</strong>, au même titre que lire et écrire. Une personne à l'aise avec son ordinateur travaille plus vite, fait moins d'erreurs et s'adapte plus facilement aux nouveaux outils numériques.</p>
-<figure class="fig"><svg viewBox="0 0 400 190" role="img" aria-label="Ordinateur portable">
-<rect x="90" y="15" width="220" height="130" rx="10" class="sd"/><rect x="100" y="25" width="200" height="110" rx="4" class="sp"/>
-<rect x="100" y="115" width="200" height="20" class="sd"/><rect x="108" y="120" width="12" height="10" rx="2" class="sg"/>
-<circle cx="200" cy="70" r="18" class="sw" opacity=".9"/><path d="M60 150h280l20 22H40z" class="sl"/><rect x="170" y="155" width="60" height="6" rx="3" class="sp"/></svg>
-<figcaption>Votre point de départ : un PC sous Windows.</figcaption></figure>
+    <style>
+    /* ==== Thèmes et variables de couleur ==== */
 
-<h3><b>B</b>Qu'est-ce qu'un ordinateur ?</h3>
-<p>Un ordinateur est une <strong>machine électronique programmable</strong> qui reçoit des informations, les traite, les conserve et les restitue. Son fonctionnement suit toujours le même cycle :</p>
-<ul>
-<li><strong>Entrée</strong> : <em>vous donnez des informations à la machine avec le clavier, la souris, un micro ou une clé USB.</em></li>
-<li><strong>Traitement</strong> : <em>le processeur effectue les calculs et exécute les instructions.</em></li>
-<li><strong>Stockage</strong> : <em>les données sont conservées sur le disque dur ou le SSD pour être retrouvées plus tard.</em></li>
-<li><strong>Sortie</strong> : <em>le résultat s'affiche sur l'écran, s'imprime ou passe par les haut-parleurs.</em></li>
-</ul>
+    :root {
+      --bg: #fff0d2;
+      --bg2: #ffe5b4;
+      --card: #fff9ea;
+      --ink: #7b5230;
+      --ink2: #a07a52;
+      --line: #ecd3a3;
+      --btn: #7b5230;
+      --btnink: #fff6e3;
+      --empty: #fbe7bf;
+      --hour: #f4d9a3;
+      --now: #c2562d;
+      --c1: #cfe0f0;
+      --c2: #cfe3c8;
+      --c3: #e0d0ee;
+      --c4: #ffd9a8;
+      --c5: #f6c6c0;
+      --c6: #f7e29a;
+      --c7: #bfe3df;
+      --c8: #e4d9c8;
+      --cink: #4a2f17;
+      --sh: 0 14px 34px rgba(123, 82, 48, .16);
+    }
 
-<h3><b>C</b>Qu'est-ce que Windows ?</h3>
-<p><strong>Windows</strong> est le système d'exploitation créé par Microsoft. C'est le programme principal qui démarre avec l'ordinateur et qui permet de s'en servir sans connaître le langage de la machine.</p>
-<ul>
-<li><strong>Interface graphique</strong> : <em>vous utilisez des fenêtres, des icônes et des menus plutôt que des lignes de commandes compliquées.</em></li>
-<li><strong>Gestion des ressources</strong> : <em>Windows répartit la mémoire, le processeur et le stockage entre les programmes ouverts.</em></li>
-<li><strong>Compatibilité</strong> : <em>la plupart des logiciels et périphériques du marché fonctionnent avec Windows.</em></li>
-<li><strong>Versions</strong> : <em>Windows 10 et Windows 11 sont les plus répandues ; leur fonctionnement de base est très proche, donc ce cours s'applique aux deux.</em></li>
-</ul>
+    /* Prune : palette du cours (violet #7B2574, vert #16883F, orange #B8560B, turquoise #0E7490) */
+    [data-theme="plum"] {
+      --bg: #f7f4f8;
+      --bg2: #ead7e8;
+      --card: #ffffff;
+      --ink: #3e1139;
+      --ink2: #5d6579;
+      --line: #e6dfe7;
+      --btn: #7b2574;
+      --btnink: #ffffff;
+      --empty: #f1e8f0;
+      --hour: #e9d9e7;
+      --now: #b8560b;
+      --c1: #d2e4f4;
+      --c2: #d3eedc;
+      --c3: #ecd9ea;
+      --c4: #f8dfc4;
+      --c5: #f8d7de;
+      --c6: #f6ebb8;
+      --c7: #cdebf0;
+      --c8: #ebe4d8;
+      --cink: #14192b;
+      --sh: 0 14px 40px -26px rgba(62, 17, 57, .35);
+    }
 
-<h3><b>D</b>Pourquoi apprendre à l'utiliser ?</h3>
-<ul>
-<li><strong>Gagner du temps</strong> : <em>connaître les bons gestes et les raccourcis accélère toutes les tâches.</em></li>
-<li><strong>Être autonome</strong> : <em>on règle soi-même les petits problèmes sans dépendre d'un tiers.</em></li>
-<li><strong>Protéger ses données</strong> : <em>de bonnes habitudes évitent la perte de fichiers et les arnaques en ligne.</em></li>
-<li><strong>Préparer la suite</strong> : <em>Word, Excel, la programmation ou le marketing digital demandent de maîtriser ces bases.</em></li>
-<li><strong>Améliorer ses chances professionnelles</strong> : <em>presque tous les métiers demandent aujourd'hui un minimum de culture informatique.</em></li>
-</ul>
+    [data-theme="dark"],
+    [data-theme="midnight"] {
+      --c1: #2f4660;
+      --c2: #33503a;
+      --c3: #4a3a63;
+      --c4: #6b4a22;
+      --c5: #6b3a35;
+      --c6: #675a22;
+      --c7: #25595a;
+      --c8: #45392c;
+      --cink: #f6e8d0;
+      --sh: 0 14px 34px rgba(0, 0, 0, .4);
+    }
 
-<h3><b>E</b>Objectifs</h3>
-<p>À la fin de ce cours, vous serez capable de :</p>
-<ul>
-<li><strong>Connaître les composants</strong> : <em>nommer et décrire le rôle de chaque pièce de la machine.</em></li>
-<li><strong>Allumer et éteindre correctement</strong> : <em>éviter la perte de données et les pannes.</em></li>
-<li><strong>Se repérer dans Windows</strong> : <em>utiliser bureau, menu Démarrer et fenêtres sans hésiter.</em></li>
-<li><strong>Gérer ses fichiers</strong> : <em>créer, ranger et retrouver ses documents rapidement.</em></li>
-<li><strong>Naviguer en sécurité</strong> : <em>se connecter à Internet en protégeant ses informations.</em></li>
-</ul>
+    [data-theme="dark"] {
+      --bg: #1c1511;
+      --bg2: #271c15;
+      --card: #2b2018;
+      --ink: #f1dcb8;
+      --ink2: #c0a584;
+      --line: #4a3828;
+      --btn: #e9c58c;
+      --btnink: #2a1c10;
+      --empty: #35271d;
+      --hour: #40301f;
+      --now: #ff8a5c;
+    }
 
-<h3><b>F</b>Public et prérequis</h3>
-<ul>
-<li><strong>Public</strong> : <em>étudiants, débutants, adultes en reconversion et toute personne qui veut apprendre les bases.</em></li>
-<li><strong>Prérequis</strong> : <em>aucun, il suffit de savoir lire et d'avoir un ordinateur Windows à portée de main.</em></li>
-<li><strong>Durée conseillée</strong> : <em>environ 3 heures, réparties en plusieurs séances pour mieux retenir.</em></li>
-</ul>
+    [data-theme="midnight"] {
+      --bg: #0f1624;
+      --bg2: #17233a;
+      --card: #18223a;
+      --ink: #dbe6ff;
+      --ink2: #93a5cc;
+      --line: #2b3a5c;
+      --btn: #8fb3ff;
+      --btnink: #0c1426;
+      --empty: #202c47;
+      --hour: #263556;
+      --now: #ff7a9c;
+    }
 
-<h3><b>G</b>Comment suivre ce cours</h3>
-<ol>
-<li><strong>Lire la notion</strong> : <em>comprenez d'abord l'idée générale avant de passer aux détails.</em></li>
-<li><strong>Pratiquer sur l'ordinateur</strong> : <em>refaites chaque manipulation vous-même, on retient surtout en faisant.</em></li>
-<li><strong>Faire les exercices</strong> : <em>ils servent à vérifier que vous maîtrisez les gestes.</em></li>
-<li><strong>Passer le quiz</strong> : <em>la note finale indique votre niveau et ce qu'il faut revoir.</em></li>
-</ol>
+    [data-theme="ocean"] {
+      --bg: #e6f4fb;
+      --bg2: #c6e6f5;
+      --card: #f6fcff;
+      --ink: #17517a;
+      --ink2: #4f87ab;
+      --line: #b7d9ea;
+      --btn: #17517a;
+      --btnink: #f2fbff;
+      --empty: #d3ebf7;
+      --hour: #b5dcf0;
+      --now: #e8590c;
+    }
 
-<h3><b>H</b>Plan du cours</h3>
-<p>Le développement comporte 7 notions, suivies d'une conclusion, puis d'une partie d'évaluation avec exercices pratiques et un quiz de 10 questions :</p>
-<ol>
-<li><strong><a href="#n1">Comprendre l'ordinateur</a></strong> : <em>matériel et logiciels.</em></li>
-<li><strong><a href="#n2">Allumer et éteindre</a></strong> : <em>démarrer et arrêter proprement.</em></li>
-<li><strong><a href="#n3">Le bureau Windows</a></strong> : <em>se repérer à l'écran.</em></li>
-<li><strong><a href="#n4">Fichiers et dossiers</a></strong> : <em>ranger et organiser ses documents.</em></li>
-<li><strong><a href="#n5">Les paramètres</a></strong> : <em>adapter Windows à ses besoins.</em></li>
-<li><strong><a href="#n6">Internet et sécurité</a></strong> : <em>se connecter et se protéger.</em></li>
-<li><strong><a href="#n7">Les raccourcis clavier</a></strong> : <em>travailler plus vite.</em></li>
-</ol></section>
+    [data-theme="forest"] {
+      --bg: #e9f3e3;
+      --bg2: #cfe6c4;
+      --card: #f6fbf2;
+      --ink: #2f5a34;
+      --ink2: #628a64;
+      --line: #c3dcb9;
+      --btn: #2f5a34;
+      --btnink: #f3fbef;
+      --empty: #d9ebd0;
+      --hour: #bddcaf;
+      --now: #d9480f;
+    }
 
-<section id="ii"><span class="big">Partie II</span><h2>II. Développement</h2>
+    [data-theme="rose"] {
+      --bg: #ffe8ef;
+      --bg2: #ffd0df;
+      --card: #fff6f9;
+      --ink: #8a2f55;
+      --ink2: #b96a8a;
+      --line: #f5c3d4;
+      --btn: #8a2f55;
+      --btnink: #fff3f7;
+      --empty: #fbd8e4;
+      --hour: #f6bcd0;
+      --now: #d6336c;
+    }
 
-<h3 id="n1"><b>1</b>Comprendre l'ordinateur</h3>
-<figure class="fig"><svg viewBox="0 0 420 150" role="img" aria-label="Composants">
-<rect x="10" y="20" width="80" height="110" rx="8" class="sd"/><circle cx="50" cy="45" r="7" class="sg"/><rect x="24" y="70" width="52" height="6" class="sl"/><rect x="24" y="84" width="52" height="6" class="sl"/>
-<rect x="130" y="15" width="130" height="85" rx="6" class="sd"/><rect x="137" y="22" width="116" height="71" class="sp"/><rect x="185" y="100" width="20" height="12" class="sd"/><rect x="165" y="112" width="60" height="6" rx="3" class="sd"/>
-<rect x="290" y="45" width="115" height="34" rx="5" class="sl"/><rect x="298" y="52" width="100" height="6" class="sp"/><rect x="298" y="64" width="100" height="6" class="sp"/>
-<ellipse cx="350" cy="115" rx="14" ry="20" class="sg"/>
-<text x="50" y="145" class="st" text-anchor="middle">Unité</text><text x="195" y="140" class="st" text-anchor="middle">Écran</text><text x="347" y="38" class="st" text-anchor="middle">Clavier</text><text x="395" y="125" class="st" text-anchor="end">Souris</text></svg>
-<figcaption>Les éléments principaux d'un ordinateur de bureau.</figcaption></figure>
-<h4>A. Le matériel (hardware)</h4>
-<ul>
-<li><strong>Unité centrale</strong> : <em>le « cerveau » qui contient le processeur, la RAM et le stockage et effectue tous les calculs.</em></li>
-<li><strong>Écran</strong> : <em>affiche les informations et vos actions.</em></li>
-<li><strong>Clavier et souris</strong> : <em>vos outils pour saisir du texte et donner des ordres.</em></li>
-<li><strong>Périphériques</strong> : <em>appareils ajoutés (imprimante, clé USB, casque, webcam) qui étendent les possibilités.</em></li>
-</ul>
-<h4>B. Les logiciels (software)</h4>
-<ul>
-<li><strong>Système d'exploitation (Windows)</strong> : <em>le programme principal qui fait le lien entre vous et la machine.</em></li>
-<li><strong>Applications</strong> : <em>programmes pour une tâche précise (Word pour écrire, Excel pour calculer, un navigateur pour Internet).</em></li>
-</ul>
-<div class="tip"><strong>RAM</strong> = mémoire de travail, effacée à l'extinction. <strong>Disque dur/SSD</strong> = stockage permanent de vos fichiers.</div>
+    [data-theme="lavender"] {
+      --bg: #f0eafc;
+      --bg2: #ddd0f6;
+      --card: #faf7ff;
+      --ink: #52358a;
+      --ink2: #8468b8;
+      --line: #d9ccf1;
+      --btn: #52358a;
+      --btnink: #f7f3ff;
+      --empty: #e4daf7;
+      --hour: #d1c0f0;
+      --now: #e8590c;
+    }
 
-<h3 id="n2"><b>2</b>Allumer et éteindre</h3>
-<h4>A. Allumer</h4>
-<ol>
-<li><strong>Brancher</strong> : <em>vérifiez l'alimentation ou la batterie.</em></li>
-<li><strong>Appuyer sur le bouton d'alimentation</strong> : <em>le système démarre.</em></li>
-<li><strong>Attendre l'écran de connexion</strong> : <em>Windows charge, patientez sans rappuyer.</em></li>
-<li><strong>Se connecter</strong> : <em>entrez mot de passe ou PIN pour ouvrir votre session.</em></li>
-</ol>
-<h4>B. Éteindre proprement</h4>
-<ol>
-<li><strong>Enregistrer et fermer</strong> : <em>sauvegardez votre travail et quittez les applications.</em></li>
-<li><strong>Démarrer → Alimentation → Arrêter</strong> : <em>Windows ferme tout correctement avant de s'éteindre.</em></li>
-</ol>
-<div class="tw"><table><tr><th>Option</th><th>Effet</th></tr>
-<tr><td>Arrêter</td><td>Éteint complètement</td></tr><tr><td>Redémarrer</td><td>Éteint puis rallume, utile en cas de blocage</td></tr><tr><td>Mettre en veille</td><td>Pause rapide, la session reste ouverte</td></tr></table></div>
-<div class="warn">Couper le courant brutalement peut faire perdre des données ou abîmer le système.</div>
+    [data-theme="slate"] {
+      --bg: #f1f3f6;
+      --bg2: #e0e4eb;
+      --card: #fff;
+      --ink: #2a3140;
+      --ink2: #6b7385;
+      --line: #dfe3ea;
+      --btn: #2a3140;
+      --btnink: #fff;
+      --empty: #eceff3;
+      --hour: #dde2ea;
+      --now: #5b4bdb;
+    }
 
-<h3 id="n3"><b>3</b>Découvrir le bureau Windows</h3>
-<figure class="fig"><svg viewBox="0 0 420 220" role="img" aria-label="Bureau Windows">
-<rect width="420" height="220" rx="8" class="sp"/><rect x="140" y="25" width="190" height="120" rx="6" class="sw"/><rect x="140" y="25" width="190" height="18" rx="6" class="sl"/>
-<text x="318" y="39" class="st">— ☐ ✕</text><text x="150" y="38" class="st">Bloc-notes</text>
-<rect x="12" y="15" width="26" height="22" rx="3" class="sg"/><text x="8" y="52" class="stw">Dossier</text><rect x="12" y="75" width="26" height="22" rx="3" class="sl"/><text x="6" y="112" class="stw">Corbeille</text>
-<rect y="196" width="420" height="24" class="sd"/><rect x="8" y="201" width="14" height="14" rx="2" class="sg"/><rect x="36" y="201" width="60" height="14" rx="3" class="sp"/><text x="340" y="213" class="stw">12:30</text>
-<text x="150" y="170" class="stw">① Icônes à gauche</text><text x="150" y="186" class="stw">② Barre des tâches en bas</text></svg>
-<figcaption>Icônes, fenêtre ouverte et barre des tâches avec le bouton Démarrer.</figcaption></figure>
-<h4>A. Les éléments du bureau</h4>
-<ul>
-<li><strong>Icônes</strong> : <em>raccourcis pour ouvrir un programme ou un dossier d'un double-clic.</em></li>
-<li><strong>Barre des tâches</strong> : <em>affiche les applications ouvertes ou épinglées et permet de passer de l'une à l'autre.</em></li>
-<li><strong>Bouton Démarrer</strong> : <em>porte d'accès aux applications, aux paramètres et à l'arrêt.</em></li>
-<li><strong>Zone de notification</strong> : <em>heure, Wi-Fi, volume et batterie.</em></li>
-</ul>
-<h4>B. Pratique</h4>
-<ol>
-<li><strong>Ouvrir Démarrer et chercher « Bloc-notes »</strong> : <em>la recherche est le moyen le plus rapide de trouver une application.</em></li>
-<li><strong>Repérer Réduire / Agrandir / Fermer</strong> : <em>ces trois boutons contrôlent la taille de la fenêtre.</em></li>
-<li><strong>Alterner avec <kbd>Alt</kbd>+<kbd>Tab</kbd></strong> : <em>passer d'une fenêtre à l'autre sans la souris.</em></li>
-</ol>
+    * {
+      box-sizing: border-box;
+    }
 
-<h3 id="n4"><b>4</b>Gérer fichiers et dossiers</h3>
-<figure class="fig"><svg viewBox="0 0 420 170" role="img" aria-label="Arborescence">
-<g stroke="#6b778d" stroke-width="2" fill="none"><path d="M40 36v32h40M110 90v28h40M110 118v28h40"/></g>
-<rect x="20" y="8" width="130" height="28" rx="6" class="sg"/><text x="30" y="27" class="stw">Documents</text>
-<rect x="80" y="55" width="130" height="28" rx="6" class="sp"/><text x="90" y="74" class="stw">UVCI</text>
-<rect x="150" y="103" width="130" height="28" rx="6" class="sd"/><text x="160" y="122" class="stw">Marketing</text>
-<rect x="150" y="137" width="130" height="28" rx="6" class="sd"/><text x="160" y="156" class="stw">Bureautique</text>
-<rect x="300" y="103" width="105" height="28" rx="6" class="sl"/><text x="310" y="122" class="st">notes.txt</text></svg>
-<figcaption>Arborescence : des dossiers qui contiennent des dossiers et des fichiers.</figcaption></figure>
-<h4>A. Vocabulaire</h4>
-<ul>
-<li><strong>Fichier</strong> : <em>un document (texte, photo, vidéo).</em></li>
-<li><strong>Dossier</strong> : <em>un « tiroir » qui regroupe des fichiers.</em></li>
-<li><strong>Explorateur de fichiers</strong> : <em>l'outil pour naviguer, ouvert avec <kbd>Windows</kbd>+<kbd>E</kbd>.</em></li>
-</ul>
-<h4>B. Les actions de base</h4>
-<ol>
-<li><strong>Créer</strong> : <em>clic droit → Nouveau → Dossier.</em></li>
-<li><strong>Renommer</strong> (<kbd>F2</kbd>) : <em>change le nom sans toucher au contenu.</em></li>
-<li><strong>Copier</strong> (<kbd>Ctrl</kbd>+<kbd>C</kbd> puis <kbd>Ctrl</kbd>+<kbd>V</kbd>) : <em>crée un double ailleurs, l'original reste.</em></li>
-<li><strong>Déplacer</strong> (<kbd>Ctrl</kbd>+<kbd>X</kbd> puis <kbd>Ctrl</kbd>+<kbd>V</kbd>) : <em>change l'emplacement du fichier.</em></li>
-<li><strong>Supprimer</strong> (<kbd>Suppr</kbd>) : <em>envoie le fichier à la Corbeille, d'où on peut le restaurer.</em></li>
-</ol>
-<h4>C. Bonnes pratiques</h4>
-<ul>
-<li><strong>Noms clairs</strong> : <em>par exemple Cours_Marketing_Chap1, pour se retrouver facilement.</em></li>
-<li><strong>Un dossier par matière</strong> : <em>garde l'ensemble organisé.</em></li>
-<li><strong>Sauvegardes</strong> : <em>copie sur clé USB ou cloud pour ne rien perdre en cas de panne.</em></li>
-</ul>
+    /* ==== Base ==== */
 
-<h3 id="n5"><b>5</b>Les paramètres essentiels</h3>
-<p>Ouvrez <strong>Démarrer → Paramètres</strong> ou <kbd>Windows</kbd>+<kbd>I</kbd>.</p>
-<ul>
-<li><strong>Système</strong> : <em>réglages d'affichage, de son et de batterie.</em></li>
-<li><strong>Réseau et Internet</strong> : <em>connexion Wi-Fi.</em></li>
-<li><strong>Personnalisation</strong> : <em>fond d'écran et thème pour adapter l'aspect.</em></li>
-<li><strong>Comptes</strong> : <em>mot de passe et code PIN de votre session.</em></li>
-<li><strong>Heure et langue</strong> : <em>fuseau horaire et clavier (AZERTY).</em></li>
-<li><strong>Windows Update</strong> : <em>installe les mises à jour qui corrigent les failles de sécurité.</em></li>
-</ul>
+    html {
+      scroll-behavior: smooth;
+    }
 
-<h3 id="n6"><b>6</b>Internet et sécurité</h3>
-<h4>A. Se connecter au Wi-Fi</h4>
-<ol>
-<li><strong>Cliquer sur l'icône réseau</strong> : <em>en bas à droite, dans la zone de notification.</em></li>
-<li><strong>Choisir le réseau</strong> : <em>sélectionnez le vôtre dans la liste.</em></li>
-<li><strong>Saisir le mot de passe</strong> : <em>puis « Se connecter ».</em></li>
-</ol>
-<h4>B. Naviguer</h4>
-<ul>
-<li><strong>Navigateur</strong> : <em>Chrome, Edge ou Firefox, le logiciel pour visiter les sites.</em></li>
-<li><strong>Barre d'adresse</strong> : <em>tapez une adresse ou une recherche.</em></li>
-<li><strong>Favoris (<kbd>Ctrl</kbd>+<kbd>D</kbd>)</strong> : <em>retrouver un site en un clic.</em></li>
-</ul>
-<h4>C. Règles de sécurité</h4>
-<ul>
-<li><strong>Mot de passe long et unique</strong> : <em>si un compte est piraté, les autres restent protégés.</em></li>
-<li><strong>Méfiance envers liens et pièces jointes</strong> : <em>ils peuvent cacher des virus ou des arnaques.</em></li>
-<li><strong>Windows Defender actif</strong> : <em>antivirus intégré qui bloque les menaces.</em></li>
-<li><strong>Se déconnecter</strong> : <em>sur un PC partagé, pour que personne n'accède à vos comptes.</em></li>
-</ul>
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 400 16px Poppins, system-ui, sans-serif;
+      transition: background .5s, color .5s;
+      overflow-x: hidden;
+    }
 
-<h3 id="n7"><b>7</b>Raccourcis clavier utiles</h3>
-<div class="tw"><table><tr><th>Raccourci</th><th>Action et intérêt</th></tr>
-<tr><td><kbd>Ctrl</kbd>+<kbd>C</kbd> / <kbd>V</kbd> / <kbd>X</kbd></td><td>Copier / Coller / Couper, base du rangement</td></tr>
-<tr><td><kbd>Ctrl</kbd>+<kbd>Z</kbd></td><td>Annuler une erreur</td></tr>
-<tr><td><kbd>Ctrl</kbd>+<kbd>S</kbd></td><td>Enregistrer son travail</td></tr>
-<tr><td><kbd>Ctrl</kbd>+<kbd>A</kbd></td><td>Tout sélectionner</td></tr>
-<tr><td><kbd>Alt</kbd>+<kbd>Tab</kbd></td><td>Changer de fenêtre</td></tr>
-<tr><td><kbd>Windows</kbd>+<kbd>D</kbd></td><td>Afficher le bureau</td></tr>
-<tr><td><kbd>Windows</kbd>+<kbd>L</kbd></td><td>Verrouiller la session en s'absentant</td></tr>
-<tr><td><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Suppr</kbd></td><td>Gestionnaire des tâches si le PC se bloque</td></tr></table></div>
-</section>
+    /* ==== Décor d’arrière-plan ==== */
 
-<section id="iii"><span class="big">Partie III</span><h2>III. Conclusion</h2>
-<h3><b>A</b>Ce qu'il faut retenir</h3>
-<div class="tw"><table><tr><th>Notion</th><th>Compétence clé</th></tr>
-<tr><td>1</td><td>Distinguer matériel et logiciel</td></tr><tr><td>2</td><td>Allumer et éteindre proprement</td></tr><tr><td>3</td><td>Se repérer dans le bureau</td></tr><tr><td>4</td><td>Créer, copier, déplacer, supprimer</td></tr><tr><td>5</td><td>Régler les paramètres</td></tr><tr><td>6</td><td>Naviguer en sécurité</td></tr><tr><td>7</td><td>Gagner du temps avec les raccourcis</td></tr></table></div>
-<h3><b>B</b>Pour la suite</h3>
-<p>Ces bases sont le socle de tout le reste : bureautique (Word, Excel), programmation, marketing digital.</p>
-<div class="tip">Pratiquez 15 minutes par jour, c'est la régularité qui rend les gestes automatiques.</div></section>
-<section id="iv"><span class="big">Partie IV</span><h2>IV. Évaluation</h2>
-<h3><b>A</b>Exercices pratiques</h3>
-<ol>
-<li>Connectez-vous, puis verrouillez votre session avec <kbd>Windows</kbd>+<kbd>L</kbd>.</li>
-<li>Créez <code>Documents/UVCI/Marketing</code> et <code>Documents/UVCI/Bureautique</code>.</li>
-<li>Écrivez 3 lignes dans le Bloc-notes et enregistrez-les dans <em>Marketing</em>.</li>
-<li>Copiez ce fichier dans <em>Bureautique</em>, puis renommez la copie.</li>
-<li>Changez votre fond d'écran.</li>
-<li>Connectez-vous au Wi-Fi et ajoutez un site en favori.</li>
-</ol>
-<h3><b>B</b>Quiz à choix multiples (10 questions)</h3>
-<div id="score">Score : 0 / 10</div><div id="quiz"></div><div id="result"></div></section>
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: .55;
+      z-index: 0;
+      animation: fl 14s ease-in-out infinite;
+      pointer-events: none;
+    }
 
-</main><footer>Les notions pour utiliser un ordinateur et Windows</footer>
-<script>
-var Q=[
-["Quelle est la différence entre la RAM et le disque dur ?",["La RAM est temporaire, le disque dur est permanent","La RAM est permanente, le disque dur est temporaire","Aucune différence","La RAM sert uniquement à imprimer"],0,"La RAM est la mémoire de travail ; le disque dur conserve vos fichiers."],
-["Quel logiciel fait le lien entre vous et la machine ?",["Un navigateur","Le système d'exploitation","Un antivirus","Word"],1,"Windows est le système d'exploitation."],
-["Quel raccourci annule la dernière action ?",["Ctrl+C","Ctrl+S","Ctrl+Z","Ctrl+A"],2,"Ctrl+Z annule."],
-["Où vont les fichiers supprimés avec la touche Suppr ?",["Ils disparaissent définitivement","Dans la Corbeille","Dans Documents","Sur la clé USB"],1,"Ils restent restaurables depuis la Corbeille."],
-["Pourquoi éteindre via le menu Démarrer ?",["Pour aller plus vite","Pour économiser le Wi-Fi","Pour éviter la perte de données et les erreurs","Ce n'est pas nécessaire"],2,"Windows ferme proprement les programmes."],
-["Que fait « Mettre en veille » ?",["Éteint complètement le PC","Met en pause, la session reste ouverte","Supprime les fichiers","Redémarre le PC"],1,"Le PC redémarre vite là où vous l'avez laissé."],
-["Quel raccourci ouvre l'Explorateur de fichiers ?",["Windows+E","Windows+L","Alt+Tab","Ctrl+D"],0,"Windows+E ouvre l'Explorateur."],
-["Quel raccourci verrouille la session ?",["Windows+D","Windows+L","Ctrl+Z","F2"],1,"Windows+L verrouille quand vous vous absentez."],
-["Quelle touche permet de renommer un fichier sélectionné ?",["F1","F2","F5","Échap"],1,"F2 passe le nom en mode édition."],
-["Quel mot de passe est le plus sûr ?",["123456","Mon prénom","Le même partout","Long, unique et mélangé"],3,"Long et unique limite les dégâts en cas de piratage."]];
-function res(){var r=s<5?["Mal","😢","r0","Relis le cours et réessaie, tu peux y arriver."]:s==5?["Passable","😐","r1","Tu as la moyenne, encore un petit effort."]:s<9?["Assez bien","🙂","r2","Bon travail, quelques points à revoir."]:s==9?["Bien","😊","r3","Presque parfait, bravo !"]:["Très bien","🤩","r4","Parfait, félicitations !"];
-var e=document.getElementById("result");e.className="show "+r[2];
-e.innerHTML='<div class="big2">'+r[1]+'</div><h4>'+r[0].toUpperCase()+'</h4><strong>'+s+' / '+Q.length+'</strong><p>'+r[3]+'</p>';
-e.scrollIntoView({behavior:"smooth",block:"center"});}
-var s=0,n=0,box=document.getElementById("quiz");
-Q.forEach(function(q,i){var d=document.createElement("div");d.className="q";var p=document.createElement("p");p.textContent=(i+1)+". "+q[0];d.appendChild(p);
-q[1].forEach(function(o,j){var b=document.createElement("button");b.textContent=String.fromCharCode(65+j)+". "+o;
-b.onclick=function(){if(d.className.indexOf("done")>-1)return;d.className+=" done";
-var bs=d.querySelectorAll("button"),good=(j==q[2]);bs[q[2]].className="ok";if(good){s++}else{b.className="ko"}
-b.insertAdjacentHTML("beforeend",'<span class="em">'+(good?"😄":"😢")+'</span>');
-d.querySelector("small").textContent=(good?"😄 Bravo ! ":"😢 Raté. Bonne réponse : "+q[1][q[2]]+". ")+q[3];
-document.getElementById("score").textContent="Score : "+s+" / 10";n++;if(n==Q.length)res();};d.appendChild(b);});
-var m=document.createElement("small");m.textContent="💡 "+q[3];d.appendChild(m);box.appendChild(d);});
-</script><script>
-(function(){var nav=document.querySelector("nav"),L=nav.querySelectorAll("a"),sub=document.createElement("div");sub.className="sub";
-document.querySelectorAll('h3[id^="n"]').forEach(function(h){var a=document.createElement("a");a.href="#"+h.id;a.innerHTML="<span>"+h.querySelector("b").textContent+"</span>"+h.lastChild.textContent;sub.appendChild(a)});
-L[1].after(sub);
-var all=nav.querySelectorAll("a"),map={};all.forEach(function(a){map[a.getAttribute("href").slice(1)]=a});
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
-all.forEach(function(a){a.removeAttribute("aria-current")});var a=map[e.target.id];
-if(a){a.setAttribute("aria-current","true");if(a.parentNode===sub)L[1].setAttribute("aria-current","true")}})},{rootMargin:"-15% 0px -75% 0px"});
-document.querySelectorAll("section[id],h3[id^=n]").forEach(function(t){io.observe(t)});})();
-</script></body></html>
+    .blob-1 {
+      width: 360px;
+      height: 360px;
+      background: var(--bg2);
+      top: -80px;
+      right: -60px;
+    }
+
+    .blob-2 {
+      width: 300px;
+      height: 300px;
+      background: var(--hour);
+      bottom: -60px;
+      left: -80px;
+      animation-delay: -7s;
+    }
+
+    @keyframes fl {
+      50% {
+        transform: translate(30px, 40px) scale(1.12);
+      }
+    }
+
+    /* ==== Barre de navigation ==== */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 2vw;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 21px;
+      line-height: .95;
+      letter-spacing: -.02em;
+    }
+
+    nav .links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    /* ==== Boutons ==== */
+
+    .btn {
+      font: 500 14px Poppins, sans-serif;
+      border: 0;
+      background: var(--btn);
+      color: var(--btnink);
+      border-radius: 10px;
+      padding: 11px 20px;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s, opacity .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--sh);
+    }
+
+    .btn:active {
+      transform: scale(.97);
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--ink);
+      box-shadow: inset 0 0 0 1.5px var(--ink);
+    }
+
+    .btn:disabled {
+      opacity: .6;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--now);
+      outline-offset: 2px;
+    }
+
+    /* ==== Mise en page ==== */
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: none;
+      margin: 0 auto;
+      padding: 0 1.5vw 70px;
+    }
+
+    /* ==== Section d’accueil ==== */
+
+    .hero {
+      text-align: center;
+      padding: 46px 0 30px;
+    }
+
+    .script {
+      font: 400 clamp(40px, 7vw, 74px)/1.1 "Pinyon Script", cursive;
+      margin: 0;
+    }
+
+    #owner-name {
+      outline: none;
+      border-bottom: 2px dashed transparent;
+      transition: border-color .2s;
+    }
+
+    #owner-name:hover,
+    #owner-name:focus {
+      border-color: var(--ink2);
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: clamp(34px, 6vw, 64px);
+      line-height: 1.05;
+      margin: 6px 0 18px;
+      letter-spacing: -.025em;
+    }
+
+    .hero-word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(34px);
+      animation: up .8s cubic-bezier(.2, .8, .2, 1) forwards;
+      animation-delay: calc(.1s + var(--i) * .15s);
+    }
+
+    @keyframes up {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--card);
+      border-radius: 99px;
+      padding: 10px 20px;
+      box-shadow: var(--sh);
+      font-weight: 500;
+      max-width: 100%;
+      animation: up .8s .5s both;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--now);
+      flex: none;
+      animation: pu 1.8s infinite;
+    }
+
+    @keyframes pu {
+      0% {
+        box-shadow: 0 0 0 0 var(--now);
+      }
+      100% {
+        box-shadow: 0 0 0 12px transparent;
+      }
+    }
+
+    .day-progress {
+      max-width: 420px;
+      margin: 18px auto 0;
+      animation: up .8s .7s both;
+    }
+
+    .day-progress small {
+      display: flex;
+      justify-content: space-between;
+      color: var(--ink2);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .progress-bar {
+      height: 8px;
+      border-radius: 9px;
+      background: var(--hour);
+      overflow: hidden;
+    }
+
+    .progress-bar i {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: var(--ink);
+      border-radius: 9px;
+      transition: width 1.6s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .8s, transform .8s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .reveal.is-revealed {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ==== Tableau de la semaine ==== */
+
+    .board {
+      background: var(--card);
+      border-radius: 28px;
+      padding: 16px;
+      box-shadow: var(--sh);
+      overflow-x: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 62px repeat(7, minmax(108px, 1fr));
+      gap: 7px;
+      min-width: 900px;
+    }
+
+    .day-head {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--btn);
+      color: var(--btnink);
+      font-weight: 600;
+      font-size: 13px;
+      text-align: center;
+      padding: 10px 4px;
+      border-radius: 12px;
+    }
+
+    .day-head.is-today {
+      background: var(--now);
+      color: #fff;
+    }
+
+    .hour-label {
+      background: var(--hour);
+      font-weight: 600;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+    }
+
+    .hour-label.is-now {
+      background: var(--now);
+      color: #fff;
+    }
+
+    .cell {
+      min-height: 48px;
+      border: 0;
+      border-radius: 12px;
+      background: var(--empty);
+      color: var(--cink);
+      font: 500 12px/1.3 Poppins, sans-serif;
+      padding: 6px 8px;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s, background .2s;
+      word-break: break-word;
+      position: relative;
+    }
+
+    .cell:not(.filled)::after {
+      content: "+";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      color: var(--ink2);
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+    .cell:not(.filled):hover::after {
+      opacity: 1;
+    }
+
+    .cell:hover {
+      transform: scale(1.04);
+      box-shadow: var(--sh);
+      z-index: 2;
+    }
+
+    .cell.filled {
+      font-weight: 600;
+    }
+
+    .pop {
+      animation: pp .5s both;
+    }
+
+    @keyframes pp {
+      from {
+        opacity: 0;
+        transform: scale(.7);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ==== Statistiques ==== */
+
+    .stats {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 0 22px;
+    }
+
+    .stat {
+      background: var(--card);
+      border-radius: 99px;
+      padding: 10px 22px;
+      box-shadow: var(--sh);
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .stat b {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .stat span {
+      color: var(--ink2);
+      font-size: 13px;
+    }
+
+    .page-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 36px;
+    }
+
+    /* ==== Fenêtres (activité et thèmes) ==== */
+
+    dialog {
+      border: 0;
+      border-radius: 28px;
+      background: var(--card);
+      color: var(--ink);
+      padding: 26px;
+      width: min(430px, 92vw);
+      font-family: Poppins, sans-serif;
+      box-shadow: var(--sh);
+    }
+
+    dialog[open] {
+      animation: dz .35s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    @keyframes dz {
+      from {
+        opacity: 0;
+        transform: scale(.88) translateY(20px);
+      }
+    }
+
+    dialog::backdrop {
+      background: rgba(40, 25, 12, .5);
+      backdrop-filter: blur(4px);
+    }
+
+    dialog h3 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    dialog p {
+      margin: 2px 0 14px;
+      color: var(--ink2);
+      font-size: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink2);
+      margin: 14px 0 6px;
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=password] {
+      width: 100%;
+      font: 500 15px Poppins, sans-serif;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 2px solid transparent;
+      background: var(--empty);
+      color: var(--ink);
+      transition: border-color .2s;
+    }
+
+    input:focus {
+      border-color: var(--ink);
+      outline: 0;
+    }
+
+    .choice-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .choice-group label {
+      margin: 0;
+    }
+
+    .choice-group input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .choice-group span {
+      display: block;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      cursor: pointer;
+      transition: transform .2s;
+    }
+
+    .choice-group input:checked + span {
+      border-color: var(--ink);
+      transform: scale(1.15);
+    }
+
+    .choice-group input:focus-visible + span {
+      outline: 3px solid var(--now);
+      outline-offset: 2px;
+    }
+
+    .choice-group .choice-pill {
+      width: auto;
+      border-radius: 12px;
+      padding: 7px 14px;
+      background: var(--empty);
+      font: 600 13px Poppins, sans-serif;
+    }
+
+    .choice-group input:checked + .choice-pill {
+      background: var(--btn);
+      color: var(--btnink);
+    }
+
+    .dialog-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .form-error {
+      color: #c2412d;
+      font-size: 13px;
+      font-weight: 500;
+      min-height: 18px;
+      margin-top: 10px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* ==== Écran de connexion ==== */
+
+    .auth {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: var(--bg);
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      overflow: auto;
+    }
+
+    .auth-card {
+      background: var(--card);
+      border-radius: 30px;
+      padding: 32px;
+      width: min(410px, 100%);
+      box-shadow: var(--sh);
+      animation: up .8s both;
+    }
+
+    .auth-card .btn {
+      width: 100%;
+      margin-top: 18px;
+      padding: 14px;
+    }
+
+    .link-button {
+      background: none;
+      border: 0;
+      color: var(--ink);
+      font: 600 14px Poppins, sans-serif;
+      cursor: pointer;
+      margin-top: 14px;
+      text-decoration: underline;
+      padding: 0;
+    }
+
+    /* ==== Notifications ==== */
+
+    #toast {
+      position: fixed;
+      left: 50%;
+      bottom: 26px;
+      transform: translate(-50%, 90px);
+      background: var(--btn);
+      color: var(--btnink);
+      padding: 13px 24px;
+      border-radius: 99px;
+      font-weight: 500;
+      z-index: 60;
+      transition: transform .5s cubic-bezier(.2, .8, .2, 1);
+      box-shadow: var(--sh);
+      max-width: 90vw;
+      text-align: center;
+    }
+
+    #toast.is-visible {
+      transform: translate(-50%, 0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: .01ms !important;
+        animation-delay: 0s !important;
+        transition-duration: .01ms !important;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media print {
+      .blob,
+      nav,
+      .page-actions,
+      #toast,
+      .stats {
+        display: none !important;
+      }
+      body {
+        background: #fff;
+      }
+    }
+
+    .auth-theme {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
+
+    /* ==== Sélecteur de thème ==== */
+
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .theme-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      padding: 16px 14px;
+      border-radius: 20px;
+      border: 3px solid transparent;
+      cursor: pointer;
+      font-family: Poppins, sans-serif;
+      box-shadow: inset 0 0 0 1.5px rgba(128, 128, 128, .28);
+      transition: transform .25s, border-color .25s, box-shadow .25s;
+    }
+
+    .theme-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--sh);
+    }
+
+    .theme-card i {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+
+    .theme-card span {
+      width: 100%;
+      font-weight: 600;
+      font-size: 13px;
+      text-align: left;
+      margin-top: 6px;
+    }
+
+    .theme-card[aria-pressed="true"] {
+      border-color: var(--now);
+      transform: scale(1.04);
+    }
+
+    .auth-title {
+      font-size: 52px;
+      text-align: center;
+    }
+
+    .auth-subtitle {
+      text-align: center;
+      color: var(--ink2);
+      margin: 0 0 6px;
+    }
+
+    .centered {
+      text-align: center;
+    }
+    </style>
+  </head>
+
+  <body>
+    <div class="blob blob-1" aria-hidden="true"></div>
+    <div class="blob blob-2" aria-hidden="true"></div>
+
+    <!-- Authentification -->
+    <div class="auth" id="auth">
+      <button class="btn ghost auth-theme" type="button" data-open-theme aria-label="Choisir un thème">🎨 Thème</button>
+
+      <form class="auth-card" id="auth-form" novalidate>
+        <p class="script auth-title" id="auth-title">Bienvenue</p>
+        <p class="auth-subtitle">Retrouve ton planning sur tous tes appareils.</p>
+
+        <div id="name-field" class="hidden">
+          <label for="auth-name">Prénom</label>
+          <input type="text" id="auth-name" maxlength="40" autocomplete="given-name">
+        </div>
+
+        <label for="auth-email">Adresse e-mail</label>
+        <input type="email" id="auth-email" autocomplete="email">
+
+        <label for="auth-password">Mot de passe</label>
+        <input type="password" id="auth-password" autocomplete="current-password">
+
+        <div class="form-error" id="auth-error" role="alert"></div>
+        <button type="submit" class="btn" id="auth-submit">Se connecter</button>
+        <div class="centered">
+          <button type="button" class="link-button" id="auth-switch">Pas de compte ? Créer un compte</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Application -->
+    <div id="app" class="hidden">
+      <nav>
+        <div class="logo">Mon<br>Planning</div>
+        <div class="links">
+          <button class="btn ghost" data-open-theme type="button" aria-label="Choisir un thème">🎨 Thème</button>
+          <button class="btn" id="logout-button" type="button">Déconnexion</button>
+        </div>
+      </nav>
+
+      <main>
+        <section class="hero">
+          <p class="script">
+            <span id="greeting">Bonjour</span>
+            <span id="owner-name" contenteditable="true" spellcheck="false" aria-label="Ton prénom">toi</span>
+          </p>
+
+          <h1>
+            <span class="hero-word" style="--i: 0">Organiser</span>
+            <span class="hero-word" style="--i: 1">chaque</span>
+            <span class="hero-word" style="--i: 2">heure</span><br>
+            <span class="hero-word" style="--i: 3">de</span>
+            <span class="hero-word" style="--i: 4">votre</span>
+            <span class="hero-word" style="--i: 5">année</span>
+          </h1>
+
+          <div class="status-pill" aria-live="polite">
+            <i class="status-dot"></i>
+            <span id="status-message">…</span>
+          </div>
+
+          <div class="day-progress">
+            <small>
+              <span>Ta journée (8h → minuit)</span>
+              <span id="day-percent">0 %</span>
+            </small>
+            <div class="progress-bar"><i id="day-bar-fill"></i></div>
+          </div>
+        </section>
+
+        <section class="stats reveal">
+          <div class="stat"><b id="stat-activities">0</b><span>activités planifiées</span></div>
+          <div class="stat"><b id="stat-hours">0</b><span>heures planifiées par semaine</span></div>
+          <div class="stat"><b id="stat-free">0</b><span>heures libres (8h–00h)</span></div>
+        </section>
+
+        <section class="board reveal">
+          <div class="grid" id="planner-grid"></div>
+        </section>
+
+        <div class="page-actions">
+          <button class="btn ghost" id="print-button" type="button">Imprimer / PDF</button>
+          <button class="btn ghost" id="reset-button" type="button">Tout effacer</button>
+        </div>
+      </main>
+    </div>
+
+    <!-- Fenêtre : ajout / modification d'une activité -->
+    <dialog id="editor">
+      <h3 id="editor-title">Activité</h3>
+      <p id="editor-subtitle"></p>
+
+      <label for="editor-text">Intitulé</label>
+      <input type="text" id="editor-text" maxlength="60" placeholder="Ex : Algèbre, TD, Sport…" autocomplete="off">
+
+      <label>Couleur</label>
+      <div class="choice-group" id="editor-colors"></div>
+
+      <label>Durée</label>
+      <div class="choice-group" id="editor-durations"></div>
+
+      <div class="form-error" id="editor-error" role="alert"></div>
+      <div class="dialog-actions">
+        <button type="button" class="btn ghost" id="editor-cancel">Annuler</button>
+        <button type="button" class="btn ghost" id="editor-delete">Supprimer</button>
+        <button type="button" class="btn" id="editor-save">Enregistrer</button>
+      </div>
+    </dialog>
+
+    <!-- Fenêtre : choix du thème -->
+    <dialog id="theme-dialog">
+      <h3>Choisis ton thème</h3>
+      <p>Les couleurs de toute la page changent aussitôt. Ton choix est mémorisé.</p>
+      <div class="theme-grid" id="theme-grid"></div>
+      <div class="dialog-actions">
+        <button type="button" class="btn" id="theme-close">Fermer</button>
+      </div>
+    </dialog>
+
+    <div id="toast" role="status"></div>
+
+    <script type="module">
+    /* ==========================================================================
+       Configuration
+       ========================================================================== */
+    const DAYS = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
+    const COLOR_NAMES = ['Bleu', 'Vert', 'Violet', 'Orange', 'Rose', 'Jaune', 'Turquoise', 'Sable'];
+    const DURATIONS = [1, 2, 3, 4];
+
+    const FIRST_HOUR = 8;
+    const LAST_HOUR = 23;
+    const HOURS = Array.from({ length: LAST_HOUR - FIRST_HOUR + 1 }, (_, index) => FIRST_HOUR + index);
+    const WEEK_CAPACITY = HOURS.length * DAYS.length;
+    const DAY_MINUTES = HOURS.length * 60;
+
+    const THEME_STORAGE_KEY = 'edt-theme';
+    const DEFAULT_THEME = 'plum';
+    const TOAST_DURATION_MS = 2600;
+    const STATUS_REFRESH_MS = 60_000;
+
+    const THEMES = [
+      { id: 'plum',     label: 'Prune',         background: '#f7f4f8', text: '#3e1139', accent: '#b8560b' },
+      { id: 'light',    label: 'Crème',         background: '#fff0d2', text: '#7b5230', accent: '#c2562d' },
+      { id: 'dark',     label: 'Nuit chocolat', background: '#1c1511', text: '#f1dcb8', accent: '#ff8a5c' },
+      { id: 'midnight', label: 'Minuit',        background: '#0f1624', text: '#dbe6ff', accent: '#8fb3ff' },
+      { id: 'ocean',    label: 'Océan',         background: '#e6f4fb', text: '#17517a', accent: '#e8590c' },
+      { id: 'forest',   label: 'Forêt',         background: '#e9f3e3', text: '#2f5a34', accent: '#d9480f' },
+      { id: 'rose',     label: 'Rose',          background: '#ffe8ef', text: '#8a2f55', accent: '#d6336c' },
+      { id: 'lavender', label: 'Lavande',       background: '#f0eafc', text: '#52358a', accent: '#e8590c' },
+      { id: 'slate',    label: 'Ardoise',       background: '#f1f3f6', text: '#2a3140', accent: '#5b4bdb' },
+    ];
+
+    /* ==========================================================================
+       État de l'application
+       ========================================================================== */
+    const state = {
+      name: '',
+      cells: new Map(), // "jour-heure" -> { title, color, duration }
+      editing: null,    // { day, hour } pendant l'édition d'une activité
+      isSignUp: false,
+      isFirstRender: true,
+    };
+
+    /* ==========================================================================
+       Utilitaires
+       ========================================================================== */
+    const $ = (id) => document.getElementById(id);
+
+    const createElement = (tag, props = {}) => Object.assign(document.createElement(tag), props);
+
+    const cellKey = (day, hour) => `${day}-${hour}`;
+    const formatHour = (hour) => `${hour % 24}h00`;
+    const todayIndex = () => (new Date().getDay() + 6) % 7; // 0 = lundi
+
+    const storage = {
+      get(key) {
+        try {
+          return localStorage.getItem(key);
+        } catch {
+          return null; // stockage indisponible (navigation privée, etc.)
+        }
+      },
+      set(key, value) {
+        try {
+          localStorage.setItem(key, value);
+        } catch {
+          /* le thème ne sera simplement pas mémorisé */
+        }
+      },
+    };
+
+    const showDialog = (dialog) => {
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+      else dialog.setAttribute('open', '');
+    };
+
+    const closeDialog = (dialog) => {
+      if (typeof dialog.close === 'function') dialog.close();
+      else dialog.removeAttribute('open');
+    };
+
+    let toastTimer;
+    const showToast = (message) => {
+      const toast = $('toast');
+      toast.textContent = message;
+      toast.classList.add('is-visible');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('is-visible'), TOAST_DURATION_MS);
+    };
+
+    const animateNumber = (element, target, suffix = '') => {
+      const duration = 900;
+      const startTime = performance.now();
+
+      const tick = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - (1 - progress) ** 3;
+        element.textContent = `${Math.round(target * eased)}${suffix}`;
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+
+    /* ==========================================================================
+       API
+       ========================================================================== */
+    class ApiError extends Error {
+      constructor(message, status) {
+        super(message);
+        this.status = status;
+      }
+    }
+
+    const api = async (method, url, body) => {
+      let response;
+      try {
+        response = await fetch(url, {
+          method,
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'same-origin',
+          body: body ? JSON.stringify(body) : undefined,
+        });
+      } catch {
+        throw new ApiError('Serveur injoignable. Vérifie ta connexion.', 0);
+      }
+
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new ApiError(data.error ?? 'Erreur serveur', response.status);
+      return data;
+    };
+
+    const isSessionExpired = (error) => error.status === 401;
+
+    /* ==========================================================================
+       Données dérivées
+       ========================================================================== */
+    // Une case est "couverte" si une activité commencée plus tôt s'étend jusqu'à elle.
+    const isCovered = (day, hour) =>
+      [1, 2, 3].some((offset) => (state.cells.get(cellKey(day, hour - offset))?.duration ?? 0) > offset);
+
+    const getTodayActivities = () =>
+      HOURS.flatMap((hour) => {
+        const cell = state.cells.get(cellKey(todayIndex(), hour));
+        return cell ? [{ hour, ...cell }] : [];
+      });
+
+    /* ==========================================================================
+       Messages d'accueil et progression de la journée
+       ========================================================================== */
+    const getGreeting = (hour) => {
+      if (hour < 5) return 'Bonne nuit';
+      if (hour < 12) return 'Bonjour';
+      if (hour < 18) return 'Bon après-midi';
+      return 'Bonsoir';
+    };
+
+    const getStatusMessage = (hour) => {
+      const activities = getTodayActivities();
+      const current = activities.find((a) => hour >= a.hour && hour < a.hour + a.duration);
+      const next = activities.find((a) => a.hour > hour);
+
+      if (hour < FIRST_HOUR) {
+        const count = activities.length;
+        if (count === 0) return 'La journée démarre à 8h : rien de prévu pour l’instant.';
+        const plural = count > 1 ? 's' : '';
+        return `La journée démarre à 8h : ${count} activité${plural} prévue${plural}.`;
+      }
+      if (current) return `En ce moment : ${current.title} — jusqu’à ${formatHour(current.hour + current.duration)}.`;
+      if (next) return `Prochaine étape : ${next.title} à ${formatHour(next.hour)}.`;
+      return activities.length
+        ? 'Journée terminée, bravo ! Repose-toi 🌙'
+        : 'Rien de prévu aujourd’hui. Clique sur une case pour te lancer.';
+    };
+
+    const updateStatus = () => {
+      const now = new Date();
+      const minutesSinceStart = (now.getHours() - FIRST_HOUR) * 60 + now.getMinutes();
+      const percent = Math.max(0, Math.min(100, Math.round((minutesSinceStart / DAY_MINUTES) * 100)));
+
+      $('greeting').textContent = getGreeting(now.getHours());
+      $('status-message').textContent = getStatusMessage(now.getHours());
+      $('day-percent').textContent = `${percent} %`;
+      $('day-bar-fill').style.width = `${percent}%`;
+    };
+
+    /* ==========================================================================
+       Rendu
+       ========================================================================== */
+    const createCellButton = (day, hour, animationOrder) => {
+      const activity = state.cells.get(cellKey(day, hour));
+      const button = createElement('button', { type: 'button', className: 'cell' });
+
+      if (activity) {
+        const { title, color, duration } = activity;
+        button.classList.add('filled');
+        button.textContent = title;
+        button.style.background = `var(--c${color})`;
+        if (duration > 1) button.style.gridRow = `span ${duration}`;
+        button.setAttribute('aria-label', `${title}, ${DAYS[day]} à ${formatHour(hour)}`);
+
+        if (state.isFirstRender) {
+          button.classList.add('pop');
+          button.style.animationDelay = `${animationOrder * 40}ms`;
+        }
+      } else {
+        button.setAttribute('aria-label', `Ajouter, ${DAYS[day]} à ${formatHour(hour)}`);
+      }
+
+      button.addEventListener('click', () => openEditor(day, hour));
+      return button;
+    };
+
+    const renderGrid = () => {
+      const today = todayIndex();
+      const currentHour = new Date().getHours();
+      const fragment = document.createDocumentFragment();
+      let animationOrder = 0;
+
+      fragment.append(createElement('div'));
+      DAYS.forEach((name, day) => {
+        const isToday = day === today;
+        fragment.append(createElement('div', {
+          className: `day-head${isToday ? ' is-today' : ''}`,
+          textContent: name,
+        }));
+      });
+
+      HOURS.forEach((hour) => {
+        fragment.append(createElement('div', {
+          className: `hour-label${hour === currentHour ? ' is-now' : ''}`,
+          textContent: formatHour(hour),
+        }));
+
+        DAYS.forEach((_, day) => {
+          if (isCovered(day, hour)) return;
+          const hasActivity = state.cells.has(cellKey(day, hour));
+          fragment.append(createCellButton(day, hour, hasActivity ? animationOrder++ : 0));
+        });
+      });
+
+      $('planner-grid').replaceChildren(fragment);
+    };
+
+    const renderStats = () => {
+      const activities = [...state.cells.values()];
+      const plannedHours = activities.reduce((total, { duration }) => total + duration, 0);
+
+      animateNumber($('stat-activities'), activities.length);
+      animateNumber($('stat-hours'), plannedHours, 'h');
+      animateNumber($('stat-free'), WEEK_CAPACITY - plannedHours, 'h');
+    };
+
+    const render = () => {
+      renderGrid();
+      renderStats();
+      updateStatus();
+      state.isFirstRender = false;
+    };
+
+    /* ==========================================================================
+       Éditeur d'activité
+       ========================================================================== */
+    const editor = $('editor');
+
+    const checkRadio = (name, value) => {
+      document.querySelector(`input[name="${name}"][value="${value}"]`).checked = true;
+    };
+    const getCheckedValue = (name) => Number(document.querySelector(`input[name="${name}"]:checked`).value);
+
+    const buildChoiceGroups = () => {
+      $('editor-colors').innerHTML = COLOR_NAMES.map((name, index) => `
+        <label>
+          <input type="radio" name="color" value="${index + 1}" aria-label="${name}">
+          <span style="background: var(--c${index + 1})"></span>
+        </label>`).join('');
+
+      $('editor-durations').innerHTML = DURATIONS.map((hours) => `
+        <label>
+          <input type="radio" name="duration" value="${hours}" aria-label="${hours} heure(s)">
+          <span class="choice-pill">${hours} h</span>
+        </label>`).join('');
+    };
+
+    const openEditor = (day, hour) => {
+      state.editing = { day, hour };
+      const activity = state.cells.get(cellKey(day, hour));
+
+      $('editor-title').textContent = activity ? 'Modifier l’activité' : 'Nouvelle activité';
+      $('editor-subtitle').textContent = `${DAYS[day]} à partir de ${formatHour(hour)}`;
+      $('editor-text').value = activity?.title ?? '';
+      $('editor-error').textContent = '';
+      $('editor-delete').hidden = !activity;
+
+      checkRadio('color', activity?.color ?? ((day + hour) % COLOR_NAMES.length) + 1);
+      checkRadio('duration', activity?.duration ?? 1);
+
+      showDialog(editor);
+      $('editor-text').focus();
+    };
+
+    const reportEditorError = (error) => {
+      if (isSessionExpired(error)) {
+        closeDialog(editor);
+        showAuth();
+        return;
+      }
+      $('editor-error').textContent = error.message;
+    };
+
+    const saveActivity = async () => {
+      const title = $('editor-text').value.trim();
+      if (!title) {
+        $('editor-error').textContent = 'Donne un nom à ton activité.';
+        return;
+      }
+
+      const { day, hour } = state.editing;
+      const color = getCheckedValue('color');
+      const duration = Math.min(getCheckedValue('duration'), LAST_HOUR + 1 - hour);
+
+      $('editor-save').disabled = true;
+      try {
+        await api('PUT', '/api/cell', { day, hour, title, color, dur: duration });
+
+        for (let offset = 0; offset < duration; offset++) {
+          state.cells.delete(cellKey(day, hour + offset));
+        }
+        state.cells.set(cellKey(day, hour), { title, color, duration });
+
+        closeDialog(editor);
+        render();
+        showToast(`C’est planté 🌱 « ${title} » est enregistré`);
+      } catch (error) {
+        reportEditorError(error);
+      } finally {
+        $('editor-save').disabled = false;
+      }
+    };
+
+    const deleteActivity = async () => {
+      const { day, hour } = state.editing;
+      try {
+        await api('DELETE', `/api/cell?day=${day}&hour=${hour}`);
+        state.cells.delete(cellKey(day, hour));
+        closeDialog(editor);
+        render();
+        showToast('Activité supprimée');
+      } catch (error) {
+        reportEditorError(error);
+      }
+    };
+
+    /* ==========================================================================
+       Thèmes
+       ========================================================================== */
+    const applyTheme = (id, label) => {
+      document.documentElement.setAttribute('data-theme', id);
+      storage.set(THEME_STORAGE_KEY, id);
+
+      [...$('theme-grid').children].forEach((card) => {
+        card.setAttribute('aria-pressed', String(card.dataset.themeId === id));
+      });
+      if (label) showToast(`Thème « ${label} » appliqué ✨`);
+    };
+
+    const buildThemePicker = () => {
+      const cards = THEMES.map(({ id, label, background, text, accent }) => {
+        const card = createElement('button', { type: 'button', className: 'theme-card' });
+        card.dataset.themeId = id;
+        card.style.background = background;
+        card.style.color = text;
+        card.innerHTML = `<i style="background: ${text}"></i><i style="background: ${accent}"></i><span>${label}</span>`;
+        card.addEventListener('click', () => applyTheme(id, label));
+        return card;
+      });
+      $('theme-grid').replaceChildren(...cards);
+    };
+
+    const initTheme = () => {
+      const saved = storage.get(THEME_STORAGE_KEY);
+      const isKnown = THEMES.some(({ id }) => id === saved);
+      applyTheme(isKnown ? saved : DEFAULT_THEME);
+    };
+
+    /* ==========================================================================
+       Authentification et chargement du planning
+       ========================================================================== */
+    const showAuth = () => {
+      $('app').classList.add('hidden');
+      $('auth').classList.remove('hidden');
+    };
+
+    const showApp = () => {
+      $('auth').classList.add('hidden');
+      $('app').classList.remove('hidden');
+    };
+
+    const setAuthMode = (isSignUp) => {
+      state.isSignUp = isSignUp;
+      $('auth-title').textContent = isSignUp ? 'Créons ton compte' : 'Bienvenue';
+      $('auth-submit').textContent = isSignUp ? 'Créer mon compte' : 'Se connecter';
+      $('auth-switch').textContent = isSignUp ? 'Déjà un compte ? Se connecter' : 'Pas de compte ? Créer un compte';
+      $('name-field').classList.toggle('hidden', !isSignUp);
+      $('auth-error').textContent = '';
+    };
+
+    const loadPlan = async () => {
+      const { name, cells } = await api('GET', '/api/plan');
+
+      state.name = name;
+      state.cells = new Map(
+        cells.map(({ day, hour, title, color, dur }) => [cellKey(day, hour), { title, color, duration: dur }]),
+      );
+      $('owner-name').textContent = name || 'toi';
+
+      showApp();
+      render();
+      showToast(`Content de te revoir${name ? `, ${name}` : ''} ✨`);
+    };
+
+    const handleAuthSubmit = async (event) => {
+      event.preventDefault();
+      const submit = $('auth-submit');
+      $('auth-error').textContent = '';
+      submit.disabled = true;
+
+      try {
+        const endpoint = state.isSignUp ? '/api/register' : '/api/login';
+        await api('POST', endpoint, {
+          email: $('auth-email').value,
+          password: $('auth-password').value,
+          name: $('auth-name').value,
+        });
+        $('auth-password').value = '';
+        await loadPlan();
+      } catch (error) {
+        $('auth-error').textContent = error.message;
+      } finally {
+        submit.disabled = false;
+      }
+    };
+
+    const logout = async () => {
+      await api('POST', '/api/logout').catch(() => {});
+      state.name = '';
+      state.cells.clear();
+      state.isFirstRender = true;
+      showAuth();
+    };
+
+    /* ==========================================================================
+       Autres actions
+       ========================================================================== */
+    const reportError = (error) => {
+      if (isSessionExpired(error)) showAuth();
+      else showToast(error.message);
+    };
+
+    const saveOwnerName = async () => {
+      const name = $('owner-name').textContent.trim();
+      if (name === state.name) return;
+
+      try {
+        await api('PUT', '/api/name', { name });
+        state.name = name;
+        showToast('Prénom enregistré ✓');
+      } catch (error) {
+        reportError(error);
+      }
+    };
+
+    const resetPlan = async () => {
+      if (!window.confirm('Effacer toute la semaine ? C’est définitif.')) return;
+
+      try {
+        await api('DELETE', '/api/plan');
+        state.cells.clear();
+        render();
+        showToast('Planning vidé, page blanche !');
+      } catch (error) {
+        reportError(error);
+      }
+    };
+
+    const initRevealOnScroll = () => {
+      const targets = document.querySelectorAll('.reveal');
+
+      if (!('IntersectionObserver' in window)) {
+        targets.forEach((target) => target.classList.add('is-revealed'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries
+          .filter((entry) => entry.isIntersecting)
+          .forEach(({ target }) => {
+            target.classList.add('is-revealed');
+            observer.unobserve(target);
+          });
+      }, { threshold: 0.12 });
+
+      targets.forEach((target) => observer.observe(target));
+    };
+
+    /* ==========================================================================
+       Initialisation
+       ========================================================================== */
+    const bindEvents = () => {
+      // Authentification
+      $('auth-form').addEventListener('submit', handleAuthSubmit);
+      $('auth-switch').addEventListener('click', () => setAuthMode(!state.isSignUp));
+      $('logout-button').addEventListener('click', logout);
+
+      // Prénom
+      $('owner-name').addEventListener('blur', saveOwnerName);
+      $('owner-name').addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter') return;
+        event.preventDefault();
+        event.target.blur();
+      });
+
+      // Éditeur d'activité
+      $('editor-save').addEventListener('click', saveActivity);
+      $('editor-delete').addEventListener('click', deleteActivity);
+      $('editor-cancel').addEventListener('click', () => closeDialog(editor));
+      $('editor-text').addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter') return;
+        event.preventDefault();
+        saveActivity();
+      });
+
+      // Thèmes
+      const themeDialog = $('theme-dialog');
+      document.querySelectorAll('[data-open-theme]').forEach((button) => {
+        button.addEventListener('click', () => showDialog(themeDialog));
+      });
+      $('theme-close').addEventListener('click', () => closeDialog(themeDialog));
+
+      // Clic sur l'arrière-plan : ferme la fenêtre
+      [editor, themeDialog].forEach((dialog) => {
+        dialog.addEventListener('click', (event) => {
+          if (event.target === dialog) closeDialog(dialog);
+        });
+      });
+
+      // Actions de page
+      $('print-button').addEventListener('click', () => window.print());
+      $('reset-button').addEventListener('click', resetPlan);
+    };
+
+    const init = () => {
+      buildChoiceGroups();
+      buildThemePicker();
+      initTheme();
+      bindEvents();
+      initRevealOnScroll();
+
+      setInterval(() => {
+        if (!$('app').classList.contains('hidden')) updateStatus();
+      }, STATUS_REFRESH_MS);
+
+      loadPlan().catch(showAuth);
+    };
+
+    init();
+    </script>
+  </body>
+</html>
